@@ -7,7 +7,7 @@ const Footer = () => {
     return (
         <div>
 
-            <footer className="footer p-12 bg-black text-white mt-64">
+            <footer className="footer p-8 bg-black text-white mt-64">
                 <div>
                     <span className="footer-title">Services</span>
                     <a className="link link-hover" href='/'>Branding</a>
@@ -29,7 +29,7 @@ const Footer = () => {
                     <a className="link link-hover" href='/'>Cookie policy</a>
                 </div>
             </footer>
-            <footer className="footer px-10 py-4 border-t bg-black text-white border-base-300">
+            <footer className="footer px-10 py-3 border-t bg-black text-white border-base-300">
 
                 <div className="items-center grid-flow-col">
 

@@ -1,0 +1,5 @@
+.carousel-image{
+    display: inline-flex !important;
+    background-image: linear-gradient(rgba(58, 57, 57, 0.75), rgba(0,0,0,0.75)) !important;
+    border-radius: 12px;
+}
