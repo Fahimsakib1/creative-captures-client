@@ -4,11 +4,11 @@ import logo1 from '../../../images/Collage.webp';
 
 const Features = () => {
     return (
-        <div>
+        <div className='px-16'>
             
-            <div className='text-center mt-16'>
-                <h2 className='text-5xl font-semibold text-blue-600 '>Quality That Matters</h2>
-                <div className='w-1/2 mx-auto mt-3'>
+            <div className='text-center mt-24'>
+                <h2 className='md:text-5xl lg:text-5xl font-semibold text-blue-600 sm:text-4xl text-3xl '>Quality That Matters</h2>
+                <div className='sm:w-full md:w-3/4 lg:w-1/2 mx-auto mt-3'>
                     <p className='text-lg'>Photography allows you to capture memories, stories, and different perspectives. Photography can serve many purposes and have many facets. Photography can tell a story, it can capture a moment in time, it can document, and it can be art.</p>
                 </div>
             </div>

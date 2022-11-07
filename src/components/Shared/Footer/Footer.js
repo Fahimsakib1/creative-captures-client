@@ -8,30 +8,35 @@ const Footer = () => {
         <div>
 
             <footer className="footer p-8 bg-black text-white mt-64">
-                <div>
+                
+                <div className='px-16'>
                     <span className="footer-title">Services</span>
                     <a className="link link-hover" href='/'>Branding</a>
                     <a className="link link-hover" href='/'>Design</a>
                     <a className="link link-hover" href='/'>Marketing</a>
                     <a className="link link-hover" href='/'>Advertisement</a>
                 </div>
-                <div>
+
+                <div className='px-16'>
                     <span className="footer-title">Company</span>
                     <a className="link link-hover" href='/'>About us</a>
                     <a className="link link-hover" href='/'>Contact</a>
                     <a className="link link-hover" href='/'>Jobs</a>
                     <a className="link link-hover" href='/'>Press kit</a>
                 </div>
-                <div>
+
+                <div className='px-16'>
                     <span className="footer-title">Legal</span>
                     <a className="link link-hover" href='/'>Terms of use</a>
                     <a className="link link-hover" href='/'>Privacy policy</a>
                     <a className="link link-hover" href='/'>Cookie policy</a>
                 </div>
-            </footer>
-            <footer className="footer px-10 py-3 border-t bg-black text-white border-base-300">
 
-                <div className="items-center grid-flow-col">
+            </footer>
+
+            <footer className="footer px-16 py-3 border-t bg-black text-white border-base-300">
+
+                <div className="items-center md:grid-flow-col lg:grid-flow-col sm:grid-flow-row">
 
                     <div className="avatar">
                         <div className="w-12 mr-2">
