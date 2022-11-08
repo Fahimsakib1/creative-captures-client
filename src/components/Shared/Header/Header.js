@@ -7,13 +7,13 @@ const Header = () => {
 
 
     const menuItems = <>
-        <div className='flex'>
+        <div className='flex lg:flex-row md:flex-col sm:flex-col flex-col'>
             <div className="avatar">
-                <div className="w-12 mr-2 rounded">
-                    <img src={logo} alt="logo" />
+                <div className="w-12 mr-2 ">
+                    <img className='rounded-lg' src={logo} alt="logo" />
                 </div>
             </div>
-            <li className='font-bold text-xl uppercase text-blue-700 -ml-2'> <Link to='/'>Creative Captures</Link></li>
+            <li className='font-bold lg:text-xl md:text-xl sm:text-lg text-md uppercase text-blue-700 -ml-2'> <Link to='/'>Creative Captures</Link></li>
         </div>
         <li className='font-semibold'> <Link to='/'>Home</Link></li>
         <li className='font-semibold'> <Link to='/allProducts'>All Products</Link></li>
