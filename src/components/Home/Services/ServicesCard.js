@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { FaClock } from "react-icons/fa";
 import { ImStarFull } from "react-icons/im";
 
 const ServicesCard = ({ service }) => {
 
-    const { img, description, service_name, price, duration, ratting } = service;
+    const { _id, img, description, service_name, price, duration, ratting } = service;
 
     return (
         <div>
@@ -37,7 +37,7 @@ const ServicesCard = ({ service }) => {
                     </div>
 
                     <div className="card-actions flex justify-between mt-4 mb-2 mx-auto">
-                        <Link><button className="btn btn-primary">View Details</button></Link>
+                        <Link to={`/services/${_id}`}><button className="btn btn-primary">View Details</button></Link>
                     </div>
                 </div>
             </div>

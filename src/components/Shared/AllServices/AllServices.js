@@ -5,17 +5,15 @@ const AllServices = () => {
 
 
     const [services, setServices] = useState([]);
-    const [size, setSize] = useState(0);
-
+    
     useEffect(() => {
-        fetch(`http://localhost:5000/services?size=${size}`)
+        fetch(`http://localhost:5000/services?size=${200}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                setServices(data.services)
-                setSize(200);
+                setServices(data)
             })
-    }, [size])
+    }, [])
 
 
     return (

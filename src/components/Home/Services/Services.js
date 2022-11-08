@@ -14,17 +14,17 @@ const Services = () => {
 
 
     const [services, setServices] = useState([]);
-    const [size, setSize] = useState(0);
 
     useEffect( () => {
-        fetch(`http://localhost:5000/services?size=${size}`)
+        fetch(`http://localhost:5000/services?size=${3}`)
         .then(res => res.json())
         .then(data => {
             console.log(data);
-            setServices(data.services)
-            setSize(3);
+            setServices(data)
         })
-    }, [size])
+    }, [])
+
+
 
 
     return (

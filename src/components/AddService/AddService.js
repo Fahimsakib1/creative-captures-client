@@ -78,7 +78,7 @@ const AddService = () => {
 
     return (
         <div className=''>
-            <div className='bg-gray-900 w-3/4 mx-auto rounded-lg '>
+            <div className='bg-gray-800 w-3/4 mx-auto rounded-lg '>
                 <form onSubmit={handleAddService} className='pb-3'>
                     <div className=' w-3/4 mx-auto'>
                         <h2 className='text-center font-bold text-blue-700 text-2xl mb-6 pt-6'>Add Your Service</h2>
@@ -111,7 +111,7 @@ const AddService = () => {
                     </div>
 
                     <div className=''>
-                        <button type="submit" className="block p-3 text-center rounded-lg text-gray-100 bg-blue-800 mb-6 mt-10 w-1/2 mx-auto">Add Service</button>
+                        <button type="submit" className="block p-3 text-center rounded-lg text-gray-100  mb-6 mt-10 w-1/2 mx-auto btn btn-primary">Add Service</button>
                     </div>
 
                 </form>
