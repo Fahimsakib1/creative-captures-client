@@ -10,7 +10,7 @@ function App() {
       <RouterProvider router = {router}></RouterProvider>
       <ToastContainer
           position="top-center"
-          autoClose={3000} />
+          autoClose={2000} />
     </div>
   );
 }

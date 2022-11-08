@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import login1 from '../../images/Login.jpg';
 import login2 from '../../images/Login2.jpg';
 import login3 from '../../images/login3.png';
@@ -13,6 +13,12 @@ const Login = () => {
 
     const { loginUser } = useContext(AuthContext);
     const [error, setError] = useState('');
+
+    const location = useLocation();
+    const navigate = useNavigate();
+    const from = location.state?.from?.pathname || '/';
+
+
 
     const handleLogin = (event) => {
         event.preventDefault();
@@ -30,6 +36,7 @@ const Login = () => {
                 )
                 setError('');
                 event.target.reset();
+                navigate(from, {replace: true});
             })
 
             .catch(error => {

@@ -6,6 +6,7 @@ import Login from "../../Login/Login";
 import AllServices from "../../Shared/AllServices/AllServices";
 import Blogs from "../../Shared/Blogs/Blogs";
 import Signup from "../../Signup/Signup";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter ([
     {
@@ -39,7 +40,7 @@ const router = createBrowserRouter ([
 
             {
                 path: '/addService',
-                element: <AddService></AddService>
+                element: <PrivateRoute><AddService></AddService></PrivateRoute>
             }
         ]
     }
