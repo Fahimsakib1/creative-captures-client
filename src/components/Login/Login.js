@@ -5,6 +5,7 @@ import login2 from '../../images/Login2.jpg';
 import login3 from '../../images/login3.png';
 import login4 from '../../images/login4.webp';
 import login5 from '../../images/Login5.webp';
+import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Login = () => {
     return (
@@ -45,21 +46,19 @@ const Login = () => {
 
                     </form>
 
-                    <div className="flex items-center space-x-1 mb-2">
+                    <div className="flex items-center space-x-1">
                         <div className="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>
                         <p className="px-3 text-sm dark:text-gray-400">Login with social accounts</p>
                         <div className="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>
                     </div>
+                    <div>
+                        <SocialLogin></SocialLogin>
+                    </div>
 
-                    <div className='text-center mb-2'>
+                    <div className='text-center mb-6 mt-2'>
                         <p>New to this Website?  <Link to='/signup' className='text-orange-400 font-semibold'>Sign Up</Link></p>
                     </div>
 
-
-
-                    <div className='mb-4'>
-
-                    </div>
                 </div>
 
             </div>

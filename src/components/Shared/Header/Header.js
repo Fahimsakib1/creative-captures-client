@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../../../images/Logo.PNG'
+import logo from '../../../images/Logo.PNG';
+import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 
 const Header = () => {
 
 
+    const {user} = useContext(AuthContext);
 
-    const menuItems = <>
+
+    const menuItems = 
+    <>
         <div className='flex lg:flex-row md:flex-col sm:flex-col flex-col'>
             <div className="avatar">
                 <div className="w-12 mr-2 ">
@@ -15,6 +19,7 @@ const Header = () => {
             </div>
             <li className='font-bold lg:text-xl md:text-xl sm:text-lg text-md uppercase text-blue-700 -ml-2'> <Link to='/'>Creative Captures</Link></li>
         </div>
+
         <li className='font-semibold'> <Link to='/'>Home</Link></li>
         <li className='font-semibold'> <Link to='/allProducts'>All Products</Link></li>
         <li className='font-semibold'> <Link to='/addProducts'>Add Products</Link></li>
