@@ -1,13 +1,47 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import login1 from '../../images/Login.jpg';
 import login2 from '../../images/Login2.jpg';
 import login3 from '../../images/login3.png';
 import login4 from '../../images/login4.webp';
 import login5 from '../../images/Login5.webp';
+import { AuthContext } from '../Context/AuthProvider/AuthProvider';
 import SocialLogin from '../SocialLogin/SocialLogin';
+import Swal from 'sweetalert2';
 
 const Login = () => {
+
+    const { loginUser } = useContext(AuthContext);
+    const [error, setError] = useState('');
+
+    const handleLogin = (event) => {
+        event.preventDefault();
+        const email = event.target.email.value;
+        const password = event.target.password.value;
+        console.log(email, password);
+        loginUser(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log("User from Login page", user);
+                Swal.fire(
+                    'Good job!',
+                    'Login Successful',
+                    'success'
+                )
+                setError('');
+                event.target.reset();
+            })
+
+            .catch(error => {
+                setError(error.message);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops... Login Failed',
+                    text: 'Something went wrong!',
+                })
+            })
+    }
+
     return (
         <div className="hero my-12">
             <div className="hero-content flex-col lg:flex-row-reverse grid md:grid-cols-2 gap-24">
@@ -19,8 +53,8 @@ const Login = () => {
                     <h1 className="text-4xl font-bold text-center mt-6">Login</h1>
 
                     <form
+                        onSubmit={handleLogin}
                         className="card-body">
-
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text font-bold text-blue-600">Email Address</span>
@@ -36,9 +70,9 @@ const Login = () => {
                             <Link className="label-text text-white hover:text-blue-600 mt-2 ml-1">Forgot password?</Link>
                         </div>
 
-                        {/* <div>
-                        {error && <p className='text-red-600'>{error}</p>}
-                    </div> */}
+                        <div>
+                            {error && <p className='text-red-600'>{error}</p>}
+                        </div>
 
                         <div className="form-control">
                             <input type="submit" value="Login" className="btn btn-primary border-0 " />

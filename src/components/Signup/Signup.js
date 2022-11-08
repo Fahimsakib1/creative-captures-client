@@ -51,6 +51,7 @@ const Signup = () => {
                     text: 'Something went wrong!',
                 })
             })
+
     }
 
 
