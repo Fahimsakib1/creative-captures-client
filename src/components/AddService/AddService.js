@@ -106,7 +106,7 @@ const AddService = () => {
                         <div>
                             <textarea
                                 name="serviceDescription"
-                                className="textarea textarea-bordered w-full pb-6" placeholder="Service Description" required></textarea>
+                                className="textarea textarea-bordered w-full pb-6 text-black" placeholder="Service Description" required></textarea>
                         </div>
                     </div>
 
