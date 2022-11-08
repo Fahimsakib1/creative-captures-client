@@ -1,15 +1,31 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import ServicesCard from './ServicesCard';
 
 const Services = () => {
 
-    const [services, setServices] = useState([]);
+    // const [services, setServices] = useState([]);
 
-    useEffect(() => {
-        fetch('http://localhost:5000/services')
-            .then(res => res.json())
-            .then(data => setServices(data))
-    }, [])
+    // useEffect(() => {
+    //     fetch('http://localhost:5000/services')
+    //         .then(res => res.json())
+    //         .then(data => setServices(data))
+    // }, [])
+
+
+    const [services, setServices] = useState([]);
+    const [size, setSize] = useState(0);
+
+    useEffect( () => {
+        fetch(`http://localhost:5000/services?size=${size}`)
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            setServices(data.services)
+            setSize(3);
+        })
+    }, [size])
+
 
     return (
         <div>
@@ -27,7 +43,7 @@ const Services = () => {
             </div>
 
             <div className='mx-auto mb-16 w-3/4 text-center'>
-                <button className="btn btn-outline btn-primary ">See All Services</button>
+                <Link to='/services'><button className="btn btn-outline btn-primary ">See All Services</button></Link>
             </div>
 
         </div>

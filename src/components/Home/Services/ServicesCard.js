@@ -9,7 +9,7 @@ const ServicesCard = ({ service }) => {
 
     return (
         <div>
-            <div className="card card-compact w-80 sm:w-80 md:w-96 lg:w-96 bg-base-100 shadow-2xl mb-8 mx-auto">
+            <div className="card card-compact w-80 sm:w-80 md:w-96 lg:w-96 bg-base-100 shadow-2xl mb-4 mx-auto">
                 <figure><img src={img} alt="Shoes" /></figure>
                 <div className="card-body">
                     <div className='flex justify-between'>
