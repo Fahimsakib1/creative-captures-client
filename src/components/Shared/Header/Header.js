@@ -50,7 +50,7 @@ const Header = () => {
                 user?.uid ?
                     <>
                         <li className='font-semibold mr-2'> <Link to='/registeredUsers'>My Reviews</Link></li>
-                        <li className='font-semibold mr-2'> <Link to='/registeredUsers'>Add Service</Link></li>
+                        <li className='font-semibold mr-2'> <Link to='/addService'>Add Service</Link></li>
                         <p className='text-blue-800 font-semibold my-auto'>Welcome, {user.email ? user.email : user.displayName}</p>
                     </>
 
