@@ -2,57 +2,73 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../../images/Logo.PNG';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Swal from 'sweetalert2';
+
+
+
 
 const Header = () => {
 
 
-    const {user} = useContext(AuthContext);
+    const { user, logoutUser } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logoutUser()
+            .then(() => {
+                toast.success('Logout Done')
+            })
+
+            .catch(error => {
+                console.error(error)
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Logout Failed!'
+                })
+            })
+    }
 
 
-    const menuItems = 
-    <>
-        <div className='flex lg:flex-row md:flex-col sm:flex-col flex-col'>
-            <div className="avatar">
-                <div className="w-12 mr-2 ">
-                    <img className='rounded-lg' src={logo} alt="logo" />
+    const menuItems =
+        <>
+            <div className='flex lg:flex-row md:flex-col sm:flex-col flex-col'>
+                <div className="avatar">
+                    <div className="w-12 mr-2">
+                        <img className='rounded-lg' src={logo} alt="logo" />
+                    </div>
                 </div>
+                <li className='font-bold lg:text-xl md:text-xl sm:text-lg text-md uppercase text-blue-700 -ml-4 mr-2'> <Link to='/'>Creative Captures</Link></li>
             </div>
-            <li className='font-bold lg:text-xl md:text-xl sm:text-lg text-md uppercase text-blue-700 -ml-2'> <Link to='/'>Creative Captures</Link></li>
-        </div>
 
-        <li className='font-semibold'> <Link to='/'>Home</Link></li>
-        <li className='font-semibold'> <Link to='/allProducts'>All Products</Link></li>
-        <li className='font-semibold'> <Link to='/addProducts'>Add Products</Link></li>
-        <li className='font-semibold'> <Link to='/blogs'>Blogs</Link></li>
+            <li className='font-semibold mr-2'> <Link to='/'>Home</Link></li>
+            <li className='font-semibold mr-2'> <Link to='/blogs'>Blogs</Link></li>
 
 
-        {/* {
-            user?.email ?
-                <>
-                    <li className='font-semibold'> <Link to='/registeredUsers'>My Reviews</Link></li>
-                    <li className='font-semibold'> <Link to='/registeredUsers'>Add Service</Link></li>
+            {
+                user?.uid ?
+                    <>
+                        <li className='font-semibold mr-2'> <Link to='/registeredUsers'>My Reviews</Link></li>
+                        <li className='font-semibold mr-2'> <Link to='/registeredUsers'>Add Service</Link></li>
+                        <p className='text-blue-800 font-semibold my-auto'>Welcome, {user.email ? user.email : user.displayName}</p>
+                    </>
 
-                    <li className='font-bold text-red-600'>
-                        <button
-                            className='btn-ghost'>Logout</button>
-                    </li>
-                </>
+                    :
+                    <>
+                        <li className='font-bold text-blue-800'> <Link to='/login'>Login</Link></li>
 
-                :
-                <>
-                    <li className='font-bold text-blue-800'> <Link to='/login'>Login</Link></li>
+                        <li className='font-bold text-purple-800'> <Link to='/signup'>Sign Up</Link></li>
+                    </>
+            }
 
-                    <li className='font-bold text-purple-800'> <Link to='/signup'>Sign Up</Link></li>
-                </>
-        } */}
+            {
+                user?.uid && <div>
+                    <Link to='/'> <button onClick={handleLogOut} className='btn btn-outline btn-error ml-3 sm:mt-2 lg:mt-0 md:mt-0 mt-2'>Logout</button></Link>
+                </div>
+            }
 
-
-
-        {/* {
-            user?.email && <p className='text-blue-800 font-semibold my-auto'>Welcome, {user.email}</p>
-        } */}
-
-    </>
+        </>
 
 
 
@@ -79,14 +95,6 @@ const Header = () => {
                 </div>
 
                 <div className="navbar-end">
-
-
-
-                    {/* <Link to='/productsByEmail'>
-                        <button className="btn btn-primary font-bold ml-3 mr-10" title='Products Filtered With Email'>
-                            <FaShoppingCart className='text-2xl'></FaShoppingCart>
-                        </button>
-                    </Link> */}
 
 
                 </div>
