@@ -20,9 +20,18 @@ const ServiceDetails = () => {
         event.preventDefault();
         const review = event.target.review.value;
         const email = user?.email || 'Unregistered User';
-        const userName = user?.displayName || 'User Name not Added'
+        const userName = user?.displayName || 'User Name not Added';
         console.log(review, email);
 
+        //code for getting the review date
+        const date = new Date();
+        const year = date.getFullYear();
+        const month = date.getMonth() + 1;
+        const day = date.getDate();
+        const reviewDate = [month, day, year].join('-');
+        console.log(reviewDate);
+
+        //review info object
         const reviewInfo = {
             service_id: service_id,
             service_name: service_name,
@@ -31,7 +40,8 @@ const ServiceDetails = () => {
             email: email,
             servicePrice: price,
             review: review,
-            userName: userName
+            userName: userName,
+            reviewDate: reviewDate
         }
 
         fetch('http://localhost:5000/reviews', {
@@ -113,7 +123,7 @@ const ServiceDetails = () => {
                 <div className='mb:mt-4 lg:mt-0 sm:mt-4 mt-4'>
 
                     <div>
-                        
+
                         <div className="container flex flex-col w-full max-w-lg p-6 pt-0 mx-auto divide-y rounded-lg divide-gray-700 bg-gray-900 text-gray-100 mb-4">
                             <div className="flex justify-between p-4">
                                 <div className="flex space-x-4">
