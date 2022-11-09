@@ -2,6 +2,7 @@ import React from 'react';
 import { ImStarFull, ImBin } from "react-icons/im";
 import { FaEdit } from 'react-icons/fa';
 import { TbEdit } from 'react-icons/tb';
+import { Link } from 'react-router-dom';
 
 
 const MyReviewTable = ({ myReview, handleDeleteReview }) => {
@@ -72,7 +73,9 @@ const MyReviewTable = ({ myReview, handleDeleteReview }) => {
                     <ImBin className='text-3xl text-red-600' title='Delete Review'>Delete</ImBin>
                 </div>
                 <div>
-                    <FaEdit className='text-3xl text-blue-600' title='Edit Review'></FaEdit>
+                    <Link to={`/updateReview/${_id}`}>
+                        <FaEdit className='text-3xl text-blue-600' title='Edit Review'></FaEdit>
+                    </Link>
                 </div>
             </div>
         </div>
