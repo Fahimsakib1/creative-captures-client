@@ -8,8 +8,9 @@ import useTitle from '../../Hooks/useTitle';
 
 const Signup = () => {
 
-    const { createUser } = useContext(AuthContext);
+    const { createUser, laoding, setLoading } = useContext(AuthContext);
     const [error, setError] = useState('');
+
 
 
     useTitle('Signup')
@@ -20,6 +21,8 @@ const Signup = () => {
         const email = event.target.email.value;
         const password = event.target.password.value;
         console.log(name, email, password);
+
+        setLoading(true);
 
         if(password.length < 6){
             return Swal.fire({
@@ -45,6 +48,7 @@ const Signup = () => {
 
                 setError('')
                 event.target.reset();
+                setLoading(false);
             })
 
             .catch(error => {

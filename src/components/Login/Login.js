@@ -12,7 +12,7 @@ import useTitle from '../../Hooks/useTitle';
 
 const Login = () => {
 
-    const { loginUser } = useContext(AuthContext);
+    const { loginUser, loading, setLoading } = useContext(AuthContext);
     const [error, setError] = useState('');
 
     const location = useLocation();
@@ -23,6 +23,8 @@ const Login = () => {
 
     useTitle('Login');
 
+    console.log(loading);
+
 
 
     const handleLogin = (event) => {
@@ -30,6 +32,7 @@ const Login = () => {
         const email = event.target.email.value;
         const password = event.target.password.value;
         console.log(email, password);
+        //setLoading(true);
         loginUser(email, password)
             .then(result => {
                 const user = result.user;
@@ -42,6 +45,8 @@ const Login = () => {
                 setError('');
                 event.target.reset();
                 navigate(from, {replace: true});
+                //setLoading(false);
+                
             })
 
             .catch(error => {
