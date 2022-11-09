@@ -56,7 +56,7 @@ const MyReviewTable = ({ myReview, handleDeleteReview }) => {
                 <div className="space-y-2">
                     <img src={service_img} alt="" className="block object-cover object-center w-full rounded-md h-44 bg-gray-500" />
                     <div className="flex items-center text-xs justify-between lg:flex-row md:flex-row sm:flex-col flex-col">
-                        <span className='text-md text-gray-100 text-lg'>Review Date: {reviewDate}</span>
+                        <span className='text-md text-gray-100 text-md'>Date: {reviewDate}</span>
                         <div className='flex'>
                             <p className='text-md text-lg'>{service_rating}</p>
                             <ImStarFull className='text-orange-600 ml-2 mt-1 text-lg'></ImStarFull>

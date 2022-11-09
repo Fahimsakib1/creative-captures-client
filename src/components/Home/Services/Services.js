@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import useTitle from '../../../Hooks/useTitle';
 import ServicesCard from './ServicesCard';
 
 const Services = () => {
@@ -11,6 +12,8 @@ const Services = () => {
     //         .then(res => res.json())
     //         .then(data => setServices(data))
     // }, [])
+
+    useTitle('All Services')
 
 
     const [services, setServices] = useState([]);

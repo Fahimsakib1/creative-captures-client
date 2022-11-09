@@ -1,8 +1,10 @@
 import React from 'react';
 import logo from '../../../images/Logo.PNG';
 import logo1 from '../../../images/Collage.webp';
+import useTitle from '../../../Hooks/useTitle';
 
 const Features = () => {
+    
     return (
         <div className='px-16'>
             

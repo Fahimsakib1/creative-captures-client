@@ -8,6 +8,7 @@ import login5 from '../../images/Login5.webp';
 import { AuthContext } from '../Context/AuthProvider/AuthProvider';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import Swal from 'sweetalert2';
+import useTitle from '../../Hooks/useTitle';
 
 const Login = () => {
 
@@ -17,6 +18,10 @@ const Login = () => {
     const location = useLocation();
     const navigate = useNavigate();
     const from = location.state?.from?.pathname || '/';
+
+
+
+    useTitle('Login');
 
 
 

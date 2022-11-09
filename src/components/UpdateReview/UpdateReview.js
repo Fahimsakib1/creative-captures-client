@@ -3,6 +3,7 @@ import { useLoaderData } from 'react-router-dom';
 import { FaUserCircle } from "react-icons/fa";
 import { AuthContext } from '../Context/AuthProvider/AuthProvider';
 import Swal from 'sweetalert2';
+import useTitle from '../../Hooks/useTitle';
 
 
 
@@ -18,13 +19,19 @@ const UpdateReview = () => {
     const { email, review, reviewDate, servicePrice, service_id, service_img, service_name, service_rating, _id } = updateReview;
 
 
+    useTitle('Update Review')
+
+
     //code for getting the review date
     const date = new Date();
     const year = date.getFullYear();
     const month = date.getMonth() + 1;
     const day = date.getDate();
-    const newReviewDate = [month, day, year].join('-');
+    const hour = date.getHours();
+    const minute = date.getMinutes();
+    const newReviewDate = [month, day, year + ' ' + hour + ' Hour ' + minute + ' Minute'].join('-');
     console.log(newReviewDate);
+
 
 
     const handleUpdateReview = (event) => {
@@ -36,7 +43,7 @@ const UpdateReview = () => {
         const updateInfo = {
             review: review,
             reviewDate: newReviewDate,
-            service_rating: rating 
+            service_rating: rating
         }
 
         fetch(`http://localhost:5000/reviews/${_id}`, {
@@ -47,33 +54,36 @@ const UpdateReview = () => {
             body: JSON.stringify(updateInfo)
         })
 
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-            if(data.modifiedCount > 0){
-                Swal.fire(
-                    'Good job!',
-                    'Your Review is Updated',
-                    'success'
-                )
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.modifiedCount > 0) {
+                    Swal.fire(
+                        'Good job!',
+                        'Your Review is Updated',
+                        'success'
+                    )
 
-                event.target.reset();
-            }
-        })
+                    event.target.reset();
+                }
+            })
 
 
     }
 
     return (
-        
+
         <div>
             <div>
 
                 <div className="container flex flex-col w-full max-w-lg p-6 pt-0 mx-auto divide-y rounded-lg divide-gray-700 bg-gray-900 text-gray-100 mb-4">
                     <div className="flex justify-between p-4">
                         <div className="flex space-x-4">
-                            <div>
-                                <h4 className="font-bold">Your Review For {service_name}</h4>
+                            <div className=''>
+                                <div className='flex justify-around align-center'>
+                                    <h4 className="font-bold my-auto mr-2 ">Your Review For {service_name}</h4>
+                                    <img src={service_img} alt="" className="object-cover w-16 h-16 bg-gray-500 ml-2" />
+                                </div>
                                 <span className="text-xs text-gray-400">Date: {reviewDate}</span>
                             </div>
                         </div>
@@ -90,8 +100,6 @@ const UpdateReview = () => {
                     </div>
                 </div>
 
-                {/* {service_rating < 5 ? parseFloat(service_rating) + 0.1 : 5} */}
-
 
                 <div className="card flex-shrink-0 w-full max-w-lg shadow-2xl bg-gray-900 text-white sm:w-3/4 sm:mx-auto lg:w-full md:w-full md:mx-auto">
                     <form
@@ -103,7 +111,7 @@ const UpdateReview = () => {
                         </div>
 
                         <div className="form-control">
-                            <input name="rating" type="text" placeholder="Update Service Rating" className="input input-bordered text-gray-500 text-bold" required/>
+                            <input name="rating" type="text" placeholder="Update Service Rating" className="input input-bordered text-gray-500 text-bold" required />
                         </div>
 
                         <div className='mt-2'>

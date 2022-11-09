@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyBEdB50dQjE9TSa_4Ot5VjqKNjKlRSSuO8",
-    authDomain: "creative-captures.firebaseapp.com",
-    projectId: "creative-captures",
-    storageBucket: "creative-captures.appspot.com",
-    messagingSenderId: "608594847556",
-    appId: "1:608594847556:web:e7e321a7e646ab3e979911"
+    apiKey: process.env.REACT_APP_apiKey,
+    authDomain: process.env.REACT_APP_authDomain,
+    projectId: process.env.REACT_APP_projectId,
+    storageBucket: process.env.REACT_APP_storageBucket,
+    messagingSenderId: process.env.REACT_APP_messagingSenderId,
+    appId: process.env.REACT_APP_appId 
 };
 
 // Initialize Firebase

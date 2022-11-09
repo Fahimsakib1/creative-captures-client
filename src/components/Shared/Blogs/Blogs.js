@@ -1,8 +1,13 @@
 import React from 'react';
+import useTitle from '../../../Hooks/useTitle';
 import AnswerOneTable from './AnswerOneTable';
 import AnswerThreeTable from './AnswerThreeTable';
 
 const Blogs = () => {
+    
+    
+    useTitle('Blogs')
+    
     return (
         <div className='w-3/4 mx-auto '>
             <section className="bg-gray-800 text-gray-100 rounded-xl">

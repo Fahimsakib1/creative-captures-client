@@ -3,10 +3,15 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../Context/AuthProvider/AuthProvider';
 import MyReviewTable from './MyReviewTable';
 import Swal from 'sweetalert2';
+import useTitle from '../../Hooks/useTitle';
 
 
 const MyReviews = () => {
 
+    
+    useTitle('My Reviews')
+    
+    
     const { user } = useContext(AuthContext);
     console.log("User From My Reviews Page:", user);
 

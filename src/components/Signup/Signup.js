@@ -4,11 +4,15 @@ import signup from '../../images/Login2.jpg';
 import { AuthContext } from '../Context/AuthProvider/AuthProvider';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import Swal from 'sweetalert2';
+import useTitle from '../../Hooks/useTitle';
 
 const Signup = () => {
 
     const { createUser } = useContext(AuthContext);
     const [error, setError] = useState('');
+
+
+    useTitle('Signup')
 
     const handleSignUp = (event) => {
         event.preventDefault();

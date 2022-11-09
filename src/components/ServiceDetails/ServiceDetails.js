@@ -28,7 +28,9 @@ const ServiceDetails = () => {
         const year = date.getFullYear();
         const month = date.getMonth() + 1;
         const day = date.getDate();
-        const reviewDate = [month, day, year].join('-');
+        const hour = date.getHours();
+        const minute = date.getMinutes();
+        const reviewDate = [month , day , year +' ' +  hour + ' Hour ' + minute + ' Minute' ].join('-');
         console.log(reviewDate);
 
         //review info object
@@ -85,12 +87,13 @@ const ServiceDetails = () => {
             .then(res => res.json())
             .then(data => {
                 setReviewsByServiceId(data)
-                console.log("Review Data ", data);
+                console.log("Review Data From Service Details Page: ", data);
                 setAddReview(true)
             })
     }, [_id, addReview])
 
-    const { review, email, service_img, service_rating, reviewDate } = reviewsByServiceId
+    const { review, email, service_img, service_rating, reviewDate } = reviewsByServiceId;
+    console.log(reviewsByServiceId);
 
 
 
