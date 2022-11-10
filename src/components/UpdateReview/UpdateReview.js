@@ -65,7 +65,7 @@ const UpdateReview = () => {
             service_rating: rating,
         }
 
-        fetch(`http://localhost:5000/reviews/${updateReview._id}`, {
+        fetch(`https://creative-captures-server.vercel.app/reviews/${updateReview._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',

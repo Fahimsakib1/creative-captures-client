@@ -8,7 +8,6 @@ import Swal from 'sweetalert2';
 
 
 
-
 const Header = () => {
 
 
@@ -17,7 +16,7 @@ const Header = () => {
     const handleLogOut = () => {
         logoutUser()
             .then(() => {
-                toast.success('Logout Done')
+                
             })
 
             .catch(error => {
@@ -56,9 +55,9 @@ const Header = () => {
 
                     :
                     <>
-                        <li className='font-bold text-blue-800'> <Link to='/login'>Login</Link></li>
+                        <li className='font-bold text-green-600'> <Link to='/login'>Login</Link></li>
 
-                        <li className='font-bold text-purple-800'> <Link to='/signup'>Sign Up</Link></li>
+                        <li className='font-bold text-blue-800'> <Link to='/signup'>Sign Up</Link></li>
                     </>
             }
 

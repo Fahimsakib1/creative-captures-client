@@ -4,6 +4,7 @@ import { AuthContext } from '../Context/AuthProvider/AuthProvider';
 import Swal from 'sweetalert2';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { tokenFunction } from '../../JWTTokenFunction/JWTTokenFunction';
 
 
 
@@ -16,6 +17,9 @@ const SocialLogin = () => {
         .then(result => {
             const user = result.user;
             console.log('User After Signed in By Google', user);
+
+            tokenFunction(user);
+
             Swal.fire(
                 'Great!',
                 'Successfully Signed in By Google',
@@ -37,6 +41,9 @@ const SocialLogin = () => {
         .then(result => {
             const user = result.user;
             console.log('User After Signed in By Github', user);
+
+            tokenFunction(user);
+            
             Swal.fire(
                 'Great!',
                 'Successfully Signed in By Github',
@@ -44,7 +51,7 @@ const SocialLogin = () => {
             )
         })
 
-        .catch(error => {
+    .catch(error => {
             toast.error('Github Sign in Failed')
         })
     }
@@ -54,9 +61,9 @@ const SocialLogin = () => {
     return (
         <div>
             <p className='text-center'>
-                <button onClick={handleGoogleLogin}   className='btn btn-ghost text-2xl'><FaGoogle></FaGoogle></button>
+                <button onClick={handleGoogleLogin}   className='btn btn-ghost text-2xl' title='Google Login'><FaGoogle></FaGoogle></button>
 
-                <button onClick={handleGithubLogin} className='btn btn-ghost text-2xl'><FaGithub></FaGithub></button>
+                {/* <button onClick={handleGithubLogin} className='btn btn-ghost text-2xl'><FaGithub></FaGithub></button> */}
             </p>
         </div>
     );

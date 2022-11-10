@@ -8,7 +8,7 @@ import Slider from '../Slider/Slider';
 
 
 const Home = () => {
-    useTitle('Home')
+    //useTitle('Home')
     
     return (
         <div>

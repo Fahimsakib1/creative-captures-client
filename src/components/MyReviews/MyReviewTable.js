@@ -10,6 +10,8 @@ const MyReviewTable = ({ myReview, handleDeleteReview }) => {
     const { email, review, servicePrice, service_id, service_img, service_name, service_rating, reviewDate, _id } = myReview;
 
     return (
+        
+        
         // <tr>
         //     <th>
         //         <label>
@@ -45,6 +47,8 @@ const MyReviewTable = ({ myReview, handleDeleteReview }) => {
         //         <button className="btn btn-primary btn-xs">Edit</button>
         //     </th>
         // </tr>
+
+        
 
         <div className="max-w-lg p-4 shadow-md bg-gray-900 text-gray-100 rounded-xl">
             <div className="flex justify-between pb-4 border-bottom">

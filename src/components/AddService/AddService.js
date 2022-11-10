@@ -47,7 +47,7 @@ const AddService = () => {
             description: serviceDescription
         }
 
-        fetch('http://localhost:5000/services', {
+        fetch('https://creative-captures-server.vercel.app/services', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

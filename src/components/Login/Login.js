@@ -9,6 +9,7 @@ import { AuthContext } from '../Context/AuthProvider/AuthProvider';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import Swal from 'sweetalert2';
 import useTitle from '../../Hooks/useTitle';
+import { toast } from 'react-toastify';
 
 
 
@@ -28,6 +29,9 @@ const Login = () => {
     console.log(loading);
 
 
+    const [serviceLoader, setServiceLoader] = useState(false);
+
+
 
     const handleLogin = (event) => {
         event.preventDefault();
@@ -39,6 +43,8 @@ const Login = () => {
         
         loginUser(email, password)
             .then(result => {
+                
+                setServiceLoader(true)
                 const user = result.user;
                 console.log("User from Login page", user);
                 
@@ -49,7 +55,7 @@ const Login = () => {
                 //get jwt token in client side
                 
                 //get jwt token in client side
-                fetch('http://localhost:5000/jwt', {
+                fetch('https://creative-captures-server.vercel.app/jwt', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
@@ -64,13 +70,15 @@ const Login = () => {
                         //set the JWT token in local storage
                         localStorage.setItem('creative-token', data.token);
                         navigate(from, {replace: true});
+                        setServiceLoader(false)
                     })
 
-                Swal.fire(
-                    'Good job!',
-                    'Login Successful',
-                    'success'
-                )
+                // Swal.fire(
+                //     'Good job!',
+                //     'Login Successful',
+                //     'success'
+                // )
+                toast.success('Login Successful')
                 setError('');
                 event.target.reset();
                 //navigate(from, {replace: true});
@@ -88,10 +96,16 @@ const Login = () => {
             })
     }
 
-    
+
 
     return (
         <div className="hero my-12">
+            
+            {
+                serviceLoader && <div className="h-32 w-32 border-8 border-dashed rounded-full animate-spin border-black mx-auto mt-8"></div>
+            }
+            
+            
             <div className="hero-content flex-col lg:flex-row-reverse grid md:grid-cols-2 gap-24">
                 <div className="text-center lg:text-left">
                     <img className='w-full' src={login5} alt="" />
@@ -130,7 +144,7 @@ const Login = () => {
 
                     <div className="flex items-center space-x-1">
                         <div className="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>
-                        <p className="px-3 text-sm dark:text-gray-400">Login with social accounts</p>
+                        <p className="px-3 text-sm dark:text-gray-400">Login With Social Accounts</p>
                         <div className="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>
                     </div>
                     <div>

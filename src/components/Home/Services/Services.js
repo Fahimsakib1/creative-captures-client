@@ -9,7 +9,7 @@ const Services = () => {
     // const [services, setServices] = useState([]);
 
     // useEffect(() => {
-    //     fetch('http://localhost:5000/services')
+    //     fetch('https://creative-captures-server.vercel.app/services')
     //         .then(res => res.json())
     //         .then(data => setServices(data))
     // }, [])
@@ -17,13 +17,13 @@ const Services = () => {
     useTitle('All Services');
 
     //const {loading, setLoading} = useContext(AuthContext);
-
+    
     //const [loading, setLoading] = useState(true);
 
     const [services, setServices] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/services?size=${3}`)
+        fetch(`https://creative-captures-server.vercel.app/services?size=${3}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data);

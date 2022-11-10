@@ -6,11 +6,16 @@ import SocialLogin from '../SocialLogin/SocialLogin';
 import Swal from 'sweetalert2';
 import useTitle from '../../Hooks/useTitle';
 import { tokenFunction } from '../../JWTTokenFunction/JWTTokenFunction';
+import { toast } from 'react-toastify';
 
 const Signup = () => {
 
     const { createUser, loading, setLoading, updateUserProfile } = useContext(AuthContext);
     const [error, setError] = useState('');
+
+
+    //loader
+    const [serviceLoader, setServiceLoader] = useState(false);
 
     //navigate
     const navigate = useNavigate();
@@ -18,7 +23,7 @@ const Signup = () => {
     //changing the page title 
     useTitle('Signup')
 
-    
+
     //signup function
     const handleSignUp = (event) => {
         event.preventDefault();
@@ -43,6 +48,7 @@ const Signup = () => {
         createUser(email, password)
             .then(result => {
 
+                setServiceLoader(true)
                 const user = result.user;
                 console.log("User from sign up page", user);
 
@@ -53,10 +59,13 @@ const Signup = () => {
                     `${name} You are signed up successfully`,
                     'success'
                 )
+
                 handleUpdateUserProfile(name, photoURL);
                 setError('')
                 event.target.reset();
                 navigate('/login');
+                setServiceLoader(false);
+                //toast.success(`${name} You are signed up successfully`)
             })
 
             .catch(error => {
@@ -87,6 +96,13 @@ const Signup = () => {
 
     return (
         <div className="hero mb-12">
+
+
+            {
+                serviceLoader && <div className="h-32 w-32 border-8 border-dashed rounded-full animate-spin border-black mx-auto mt-8"></div>
+            }
+
+
             <div className="hero-content flex-col lg:flex-row-reverse grid md:grid-cols-2 gap-24">
                 <div className="text-center lg:text-left">
                     <img className='w-full' src={signup} alt="" />
@@ -140,7 +156,7 @@ const Signup = () => {
 
                     <div className="flex items-center space-x-1">
                         <div className="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>
-                        <p className="px-3 text-sm dark:text-gray-400">Login with social accounts</p>
+                        <p className="px-3 text-sm dark:text-gray-400">Login With Social Accounts</p>
                         <div className="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>
                     </div>
                     <div>

@@ -8,43 +8,49 @@ import useTitle from '../../Hooks/useTitle';
 
 const MyReviews = () => {
 
-    
+
     useTitle('My Reviews')
-    
-    
-    const { user, logoutUser } = useContext(AuthContext);
+
+
+    const { user, logoutUser, loading, setLoading } = useContext(AuthContext);
     console.log("User From My Reviews Page:", user);
 
     const [reviews, setReviews] = useState([]);
 
-    
-    
-    
+
+
+
     // useEffect(() => {
-    //     fetch(`http://localhost:5000/reviews?email=${user?.email}`)
+    //     fetch(`https://creative-captures-server.vercel.app/reviews?email=${user?.email}`)
     //         .then(res => res.json())
     //         .then(data => setReviews(data))
     // }, [user?.email])
 
 
 
+    const [serviceLoader, setServiceLoader] = useState(true);
+
+
+
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?email=${user?.email}`, {
+        fetch(`https://creative-captures-server.vercel.app/reviews?email=${user?.email}`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('creative-token')}`
             }
         })
 
-
             .then(res => {
-                if(res.status === 401 || res.status === 403){
+                if (res.status === 401 || res.status === 403) {
                     return logoutUser()
                 }
                 return res.json();
             })
-            .then(data => setReviews(data))
-    }, [user?.email, logoutUser])
+            .then(data => {
+                setReviews(data)
+                setLoading(false)
+            })
+    }, [user?.email, logoutUser, setLoading])
 
 
 
@@ -57,7 +63,7 @@ const MyReviews = () => {
     const handleDeleteReview = (id, name) => {
         const agree = window.confirm(`Are You sure you want to delete the review of ${name}`);
         if (agree) {
-            fetch(`http://localhost:5000/reviews/${id}`, {
+            fetch(`https://creative-captures-server.vercel.app/reviews/${id}`, {
                 method: 'DELETE',
             })
 
@@ -68,7 +74,7 @@ const MyReviews = () => {
                         const remainingReviews = reviews.filter(rev => rev._id !== id);
                         setReviews(remainingReviews);
                         Swal.fire(
-                            'Good job!',
+                            'Done!',
                             'Review Deleted',
                             'success'
                         )
@@ -129,6 +135,10 @@ const MyReviews = () => {
                             user?.email ?
                                 <div className='mx-auto my-44'>
                                     <h2 className='text-4xl text-gray-600 text-center'>No Reviews Are Added By {user?.email}</h2>
+
+                                    {
+                                        loading && <div className="h-32 w-32 border-8 border-dashed rounded-full animate-spin border-blue-600 mx-auto mt-8"></div>
+                                    }
                                 </div>
                                 :
 

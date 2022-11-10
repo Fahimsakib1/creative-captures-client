@@ -12,7 +12,7 @@ const ServicesCard = ({ service }) => {
 
     return (
         <div>
-            <div className="card card-compact w-80 sm:w-80 md:w-96 lg:w-96 bg-base-100 shadow-2xl mb-4 mx-auto">
+            <div className="card card-compact w-fit sm:w-96 md:w-96 lg:w-96 bg-base-100 shadow-2xl mb-4 mx-auto">
 
                 <PhotoProvider>
                     <PhotoView src={img} className='w-full'>
@@ -20,7 +20,6 @@ const ServicesCard = ({ service }) => {
                     </PhotoView>
                 </PhotoProvider>
 
-                {/* <figure><img src={img} alt="ServiceImage" /></figure> */}
                 <div className="card-body">
                     <div className='flex justify-between'>
                         <h2 className="card-title text-blue-700 text-xl">{service_name}</h2>
@@ -28,7 +27,7 @@ const ServicesCard = ({ service }) => {
 
                     <p>{description.length > 100 ? description.slice(0, 100) + '...' : description}</p>
 
-                    <div className='flex justify-between'>
+                    <div className='flex justify-between lg:flex-row md:flex-row sm:flex-col flex-col'>
 
                         <div className='flex align-center justify-center'>
                             <FaClock className='my-auto text-xl pr-2'></FaClock>
@@ -41,7 +40,9 @@ const ServicesCard = ({ service }) => {
 
                         <div className='flex'>
                             <p className='text-black font-bold'>Rating: {ratting} </p>
-                            <ImStarFull className='text-lg ml-1 text-orange-500'></ImStarFull>
+                            <div className=''>
+                                <ImStarFull className='text-lg ml-1 text-orange-500'></ImStarFull>
+                            </div>
                         </div>
 
                     </div>
