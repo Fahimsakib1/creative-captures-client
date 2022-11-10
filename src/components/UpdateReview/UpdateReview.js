@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { FaUserCircle } from "react-icons/fa";
 import { AuthContext } from '../Context/AuthProvider/AuthProvider';
@@ -12,17 +12,17 @@ import useTitle from '../../Hooks/useTitle';
 const UpdateReview = () => {
 
     const updateReview = useLoaderData();
-    console.log(updateReview);
+    console.log("Initial Review properties by loader", updateReview);
 
     const { user } = useContext(AuthContext)
 
-    const { email, review, reviewDate, servicePrice, service_id, service_img, service_name, service_rating, _id } = updateReview;
+    // const { email, review, reviewDate, servicePrice, service_id, service_img, service_name, service_rating, _id } = updateReview;
 
 
     useTitle('Update Review')
 
 
-    //code for getting the review date
+    //code for getting the review time and date
     const date = new Date();
     const year = date.getFullYear();
     const month = date.getMonth() + 1;
@@ -31,6 +31,10 @@ const UpdateReview = () => {
     const minute = date.getMinutes();
     const newReviewDate = [month, day, year + ' ' + hour + ' Hour ' + minute + ' Minute'].join('-');
     console.log(newReviewDate);
+
+
+
+    const [newUpdate, setNewUpdate] = useState(updateReview)
 
 
 
@@ -43,10 +47,10 @@ const UpdateReview = () => {
         const updateInfo = {
             review: review,
             reviewDate: newReviewDate,
-            service_rating: rating
+            service_rating: rating,
         }
 
-        fetch(`http://localhost:5000/reviews/${_id}`, {
+        fetch(`http://localhost:5000/reviews/${updateReview._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',
@@ -63,13 +67,27 @@ const UpdateReview = () => {
                         'Your Review is Updated',
                         'success'
                     )
-
+                    console.log("Updated Review Data", data)
+                    setNewUpdate(updateInfo);
                     event.target.reset();
                 }
             })
 
+            //console.log("Inside the Update review function", newUpdate)
 
     }
+
+    console.log("Outside the Update review function", newUpdate)
+
+
+
+    const {review, reviewDate,  service_rating} = newUpdate;
+
+
+
+
+
+
 
     return (
 
@@ -81,8 +99,8 @@ const UpdateReview = () => {
                         <div className="flex space-x-4">
                             <div className=''>
                                 <div className='flex justify-around align-center'>
-                                    <h4 className="font-bold my-auto mr-2 ">Your Review For {service_name}</h4>
-                                    <img src={service_img} alt="" className="object-cover w-16 h-16 bg-gray-500 ml-2" />
+                                    <h4 className="font-bold my-auto mr-2 ">Your Review For {updateReview.service_name}</h4>
+                                    <img src={updateReview.service_img} alt="" className="object-cover w-16 h-16 bg-gray-500 ml-2" />
                                 </div>
                                 <span className="text-xs text-gray-400">Date: {reviewDate}</span>
                             </div>
@@ -99,6 +117,8 @@ const UpdateReview = () => {
                         <p>{review}</p>
                     </div>
                 </div>
+
+
 
 
                 <div className="card flex-shrink-0 w-full max-w-lg shadow-2xl bg-gray-900 text-white sm:w-3/4 sm:mx-auto lg:w-full md:w-full md:mx-auto">

@@ -64,13 +64,13 @@ const Signup = () => {
 
 
     return (
-        <div className="hero my-12">
+        <div className="hero mb-12">
             <div className="hero-content flex-col lg:flex-row-reverse grid md:grid-cols-2 gap-24">
                 <div className="text-center lg:text-left">
                     <img className='w-full' src={signup} alt="" />
                 </div>
 
-                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-gray-900 text-white sm:w-3/4 sm:mx-auto lg:w-full md:w-full md:mx-auto">
+                <div className="card flex-shrink-0 w-full max-w-md shadow-2xl bg-gray-900 text-white sm:w-3/4 sm:mx-auto lg:w-full md:w-full md:mx-auto">
                     <h1 className="text-4xl font-bold text-center mt-6">Sign Up</h1>
 
                     <form

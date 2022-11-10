@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { FaClock } from "react-icons/fa";
 import { ImStarFull } from "react-icons/im";
+import { PhotoProvider, PhotoView } from 'react-photo-view';
 
 const ServicesCard = ({ service }) => {
 
@@ -11,7 +12,14 @@ const ServicesCard = ({ service }) => {
     return (
         <div>
             <div className="card card-compact w-80 sm:w-80 md:w-96 lg:w-96 bg-base-100 shadow-2xl mb-4 mx-auto">
-                <figure><img src={img} alt="Shoes" /></figure>
+
+                {/* <PhotoProvider>
+                    <PhotoView src={img} className='w-full'>
+                        <img className='h-64' src={img} alt="ServiceImage" />
+                    </PhotoView>
+                </PhotoProvider> */}
+
+                <figure><img src={img} alt="ServiceImage" /></figure>
                 <div className="card-body">
                     <div className='flex justify-between'>
                         <h2 className="card-title text-blue-700 text-xl">{service_name}</h2>
@@ -20,7 +28,7 @@ const ServicesCard = ({ service }) => {
                     <p>{description.length > 100 ? description.slice(0, 100) + '...' : description}</p>
 
                     <div className='flex justify-between'>
-                        
+
                         <div className='flex align-center justify-center'>
                             <FaClock className='my-auto text-xl pr-2'></FaClock>
                             <p className="text-md font-bold text-black">{duration}</p>

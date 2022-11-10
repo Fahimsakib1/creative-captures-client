@@ -66,7 +66,7 @@ const Login = () => {
                     <img className='w-full' src={login5} alt="" />
                 </div>
 
-                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-gray-900 text-white sm:w-3/4 sm:mx-auto lg:w-full md:w-full md:mx-auto">
+                <div className="card flex-shrink-0 w-full max-w-md shadow-2xl bg-gray-900 text-white sm:w-3/4 sm:mx-auto lg:w-full md:w-full md:mx-auto">
                     <h1 className="text-4xl font-bold text-center mt-6">Login</h1>
 
                     <form
