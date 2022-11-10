@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import useTitle from '../../../Hooks/useTitle';
+import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 import ServicesCard from './ServicesCard';
 
 const Services = () => {
@@ -13,18 +14,21 @@ const Services = () => {
     //         .then(data => setServices(data))
     // }, [])
 
-    useTitle('All Services')
+    useTitle('All Services');
 
+    //const {loading, setLoading} = useContext(AuthContext);
+
+    //const [loading, setLoading] = useState(true);
 
     const [services, setServices] = useState([]);
 
-    useEffect( () => {
+    useEffect(() => {
         fetch(`http://localhost:5000/services?size=${3}`)
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-            setServices(data)
-        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                setServices(data)
+            })
     }, [])
 
 
@@ -41,7 +45,7 @@ const Services = () => {
 
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-8 px-12'>
                 {
-                    services.map(service => <ServicesCard key={service._id} service ={service}></ServicesCard>)
+                    services.map(service => <ServicesCard key={service._id} service={service}></ServicesCard>)
                 }
             </div>
 

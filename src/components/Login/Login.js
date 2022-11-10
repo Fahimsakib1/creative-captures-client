@@ -10,6 +10,8 @@ import SocialLogin from '../SocialLogin/SocialLogin';
 import Swal from 'sweetalert2';
 import useTitle from '../../Hooks/useTitle';
 
+
+
 const Login = () => {
 
     const { loginUser, loading, setLoading } = useContext(AuthContext);
@@ -33,10 +35,37 @@ const Login = () => {
         const password = event.target.password.value;
         console.log(email, password);
         //setLoading(true);
+        
+        
         loginUser(email, password)
             .then(result => {
                 const user = result.user;
                 console.log("User from Login page", user);
+                
+                const currentUser = {
+                    email: user?.email
+                }
+
+                //get jwt token in client side
+                
+                //get jwt token in client side
+                fetch('http://localhost:5000/jwt', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(currentUser)
+                })
+
+                .then(res => res.json())
+                    .then(data => {
+                        console.log("Token received from server side", data.token)
+
+                        //set the JWT token in local storage
+                        localStorage.setItem('creative-token', data.token);
+                        navigate(from, {replace: true});
+                    })
+
                 Swal.fire(
                     'Good job!',
                     'Login Successful',
@@ -44,7 +73,7 @@ const Login = () => {
                 )
                 setError('');
                 event.target.reset();
-                navigate(from, {replace: true});
+                //navigate(from, {replace: true});
                 //setLoading(false);
                 
             })
@@ -58,6 +87,8 @@ const Login = () => {
                 })
             })
     }
+
+    
 
     return (
         <div className="hero my-12">

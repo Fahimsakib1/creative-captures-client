@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { FaClock, FaUserCircle } from "react-icons/fa";
 import { AuthContext } from '../Context/AuthProvider/AuthProvider';
 
@@ -6,9 +6,13 @@ import { AuthContext } from '../Context/AuthProvider/AuthProvider';
 
 const ReviewsOnCurrentPage = ({ rev }) => {
 
-    const {user} = useContext(AuthContext);
-    
+    const { user } = useContext(AuthContext);
+    console.log("User from Service Details Page: ", user)
+
     const { service_name, service_img, service_rating, email, servicePrice, review, reviewDate } = rev;
+
+
+    const [userPhoto, setUserPhoto] = useState(user?.photoURL);
 
     return (
         <div>
@@ -21,6 +25,8 @@ const ReviewsOnCurrentPage = ({ rev }) => {
                                     :
                                     <FaUserCircle className='w-12 h-12 rounded-full'></FaUserCircle>
                             }
+
+                            
                         </div>
                         <div>
                             <h4 className="font-bold">{email}</h4>

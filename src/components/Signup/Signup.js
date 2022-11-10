@@ -1,30 +1,36 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import signup from '../../images/Login2.jpg';
 import { AuthContext } from '../Context/AuthProvider/AuthProvider';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import Swal from 'sweetalert2';
 import useTitle from '../../Hooks/useTitle';
+import { tokenFunction } from '../../JWTTokenFunction/JWTTokenFunction';
 
 const Signup = () => {
 
-    const { createUser, laoding, setLoading } = useContext(AuthContext);
+    const { createUser, loading, setLoading, updateUserProfile } = useContext(AuthContext);
     const [error, setError] = useState('');
 
+    //navigate
+    const navigate = useNavigate();
 
-
+    //changing the page title 
     useTitle('Signup')
 
+    
+    //signup function
     const handleSignUp = (event) => {
         event.preventDefault();
+
         const name = event.target.name.value;
+        const photoURL = event.target.photoURL.value;
         const email = event.target.email.value;
         const password = event.target.password.value;
-        console.log(name, email, password);
+        console.log(name, photoURL, email, password);
 
-        setLoading(true);
 
-        if(password.length < 6){
+        if (password.length < 6) {
             return Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
@@ -33,22 +39,24 @@ const Signup = () => {
         }
 
 
-        
+
         createUser(email, password)
             .then(result => {
 
                 const user = result.user;
                 console.log("User from sign up page", user);
 
+                tokenFunction(user);
+
                 Swal.fire(
-                    'Good job!',
-                    'User Created Successfully',
+                    'Great!',
+                    `${name} You are signed up successfully`,
                     'success'
                 )
-
+                handleUpdateUserProfile(name, photoURL);
                 setError('')
                 event.target.reset();
-                setLoading(false);
+                navigate('/login');
             })
 
             .catch(error => {
@@ -60,6 +68,20 @@ const Signup = () => {
                 })
             })
 
+    }
+
+
+
+
+    const handleUpdateUserProfile = (name, photoURL) => {
+        const profile = {
+            displayName: name,
+            photoURL: photoURL
+        }
+
+        updateUserProfile(profile)
+            .then(() => { })
+            .catch(error => console.error(error))
     }
 
 
@@ -76,11 +98,19 @@ const Signup = () => {
                     <form
                         onSubmit={handleSignUp}
                         className="card-body">
+
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text font-bold text-blue-600">Name</span>
                             </label>
                             <input name="name" type="text" placeholder="Enter Name" className="input input-bordered text-black" required />
+                        </div>
+
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text font-bold text-blue-600">Photo URL</span>
+                            </label>
+                            <input name="photoURL" type="text" placeholder="Enter Photo URL" className="input input-bordered text-black" required />
                         </div>
 
 

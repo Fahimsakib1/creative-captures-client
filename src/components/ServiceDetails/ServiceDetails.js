@@ -39,6 +39,7 @@ const ServiceDetails = () => {
         const MonthDateYear = [month, day, year].join('-');
         const reviewDate = MonthDateYear + ' ' + currentTime
         console.log(reviewDate);
+        
 
         //review info object
         const reviewInfo = {

@@ -12,16 +12,46 @@ const MyReviews = () => {
     useTitle('My Reviews')
     
     
-    const { user } = useContext(AuthContext);
+    const { user, logoutUser } = useContext(AuthContext);
     console.log("User From My Reviews Page:", user);
 
     const [reviews, setReviews] = useState([]);
 
+    
+    
+    
+    // useEffect(() => {
+    //     fetch(`http://localhost:5000/reviews?email=${user?.email}`)
+    //         .then(res => res.json())
+    //         .then(data => setReviews(data))
+    // }, [user?.email])
+
+
+
+
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?email=${user?.email}`)
-            .then(res => res.json())
+        fetch(`http://localhost:5000/reviews?email=${user?.email}`, {
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('creative-token')}`
+            }
+        })
+
+
+            .then(res => {
+                if(res.status === 401 || res.status === 403){
+                    return logoutUser()
+                }
+                return res.json();
+            })
             .then(data => setReviews(data))
-    }, [user?.email])
+    }, [user?.email, logoutUser])
+
+
+
+
+
+
+
 
 
     const handleDeleteReview = (id, name) => {

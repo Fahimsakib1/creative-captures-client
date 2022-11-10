@@ -23,13 +23,28 @@ const UpdateReview = () => {
 
 
     //code for getting the review time and date
+    // const date = new Date();
+    // const year = date.getFullYear();
+    // const month = date.getMonth() + 1;
+    // const day = date.getDate();
+    // const hour = date.getHours();
+    // const minute = date.getMinutes();
+    // const newReviewDate = [month, day, year + ' ' + hour + ' Hour ' + minute + ' Minute'].join('-');
+    // console.log(newReviewDate);
+
+
+
+
+    //code for getting the review date
     const date = new Date();
     const year = date.getFullYear();
     const month = date.getMonth() + 1;
     const day = date.getDate();
     const hour = date.getHours();
     const minute = date.getMinutes();
-    const newReviewDate = [month, day, year + ' ' + hour + ' Hour ' + minute + ' Minute'].join('-');
+    const currentTime = date.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
+    const MonthDateYear = [month, day, year].join('-');
+    const newReviewDate = MonthDateYear + ' ' + currentTime
     console.log(newReviewDate);
 
 

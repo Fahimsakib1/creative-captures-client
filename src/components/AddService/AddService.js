@@ -7,6 +7,7 @@ import useTitle from '../../Hooks/useTitle';
 const AddService = () => {
 
     const { user } = useContext(AuthContext);
+    //console.log("User from add service page: ", user)
 
     useTitle('Add Service')
 
@@ -84,7 +85,7 @@ const AddService = () => {
             <div className='bg-gray-800 w-3/4 mx-auto rounded-lg '>
                 <form onSubmit={handleAddService} className='pb-3'>
                     <div className=' w-3/4 mx-auto'>
-                        <h2 className='text-center font-bold text-blue-700 text-2xl mb-6 pt-6'>Add Your Service</h2>
+                        <h2 className='text-center font-semibold text-blue-700 text-2xl mb-6 pt-6'><span className='text-orange-600'>{user?.displayName ? user.displayName : user.email}</span> Add Your Service</h2>
 
                         <div>
                             <input name="email" type="text" defaultValue={user?.email} readOnly placeholder="Your Email Address" className="input input-bordered w-full mx-auto text-gray-400 font-semibold mb-6" />

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { FaClock } from "react-icons/fa";
 import { ImStarFull } from "react-icons/im";
 import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
 
 const ServicesCard = ({ service }) => {
 
@@ -13,13 +14,13 @@ const ServicesCard = ({ service }) => {
         <div>
             <div className="card card-compact w-80 sm:w-80 md:w-96 lg:w-96 bg-base-100 shadow-2xl mb-4 mx-auto">
 
-                {/* <PhotoProvider>
+                <PhotoProvider>
                     <PhotoView src={img} className='w-full'>
                         <img className='h-64' src={img} alt="ServiceImage" />
                     </PhotoView>
-                </PhotoProvider> */}
+                </PhotoProvider>
 
-                <figure><img src={img} alt="ServiceImage" /></figure>
+                {/* <figure><img src={img} alt="ServiceImage" /></figure> */}
                 <div className="card-body">
                     <div className='flex justify-between'>
                         <h2 className="card-title text-blue-700 text-xl">{service_name}</h2>
