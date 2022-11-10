@@ -12,12 +12,12 @@ const Feedback = () => {
         <section className=" mt-12 mb-8  text-black">
 
             <div className="container flex flex-col items-center mx-auto md:p-10 md:px-12">
-                <h2 className='md:text-5xl lg:text-5xl font-semibold text-blue-600 sm:text-4xl text-3xl '>My Happiest Customers</h2>
+                <h2 className='md:text-5xl lg:text-5xl font-semibold text-blue-600 sm:text-4xl text-3xl '>Well Wishers</h2>
             </div>
 
             <div className="container flex flex-col items-center justify-center mx-auto lg:flex-row lg:flex-wrap lg:justify-evenly lg:px-10">
 
-                <div className="flex flex-col max-w-sm mx-4 my-6 shadow-lg">
+                <div className="flex flex-col max-w-sm mx-4 my-6 shadow-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 hover:rounded-xl rounded-xl">
                     <div className="px-4 py-12 rounded-t-lg sm:px-8 md:px-12 bg-gray-900">
                         <p className="relative px-6 py-1 text-lg italic text-center text-gray-100">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" className="w-8 h-8 text-violet-400">
@@ -37,7 +37,7 @@ const Feedback = () => {
                     </div>
                 </div>
 
-                <div className="flex flex-col max-w-sm mx-4 my-6 shadow-lg">
+                <div className="flex flex-col max-w-sm mx-4 my-6 shadow-lg    transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 hover:rounded-xl rounded-xl">
                     <div className="px-4 py-12 rounded-t-lg sm:px-8 md:px-12 bg-gray-900">
                         <p className="relative px-6 py-1 text-lg italic text-center text-gray-100">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" className="w-8 h-8 text-violet-400">
@@ -57,7 +57,7 @@ const Feedback = () => {
                     </div>
                 </div>
 
-                <div className="flex flex-col max-w-sm mx-4 my-6 shadow-lg">
+                <div className="flex flex-col max-w-sm mx-4 my-6 shadow-lg  transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 hover:rounded-xl rounded-xl">
                     <div className="px-4 py-12 rounded-t-lg sm:px-8 md:px-12 bg-gray-900">
                         <p className="relative px-6 py-1 text-lg italic text-center text-gray-100">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" className="w-8 h-8 text-violet-400">
@@ -77,7 +77,7 @@ const Feedback = () => {
                     </div>
                 </div>
 
-                <div className="flex flex-col max-w-sm mx-4 my-6 shadow-lg">
+                <div className="flex flex-col max-w-sm mx-4 my-6 shadow-lg  transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 hover:rounded-xl rounded-xl">
                     <div className="px-4 py-12 rounded-t-lg sm:px-8 md:px-12 bg-gray-900">
                         <p className="relative px-6 py-1 text-lg italic text-center text-gray-100">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" className="w-8 h-8 text-violet-400">
@@ -97,7 +97,7 @@ const Feedback = () => {
                     </div>
                 </div>
 
-                <div className="flex flex-col max-w-sm mx-4 my-6 shadow-lg">
+                <div className="flex flex-col max-w-sm mx-4 my-6 shadow-lg  transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 hover:rounded-xl rounded-xl">
                     <div className="px-4 py-12 rounded-t-lg sm:px-8 md:px-12 bg-gray-900">
                         <p className="relative px-6 py-1 text-lg italic text-center text-gray-100">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" className="w-8 h-8 text-violet-400">
@@ -117,7 +117,7 @@ const Feedback = () => {
                     </div>
                 </div>
 
-                <div className="flex flex-col max-w-sm mx-4 my-6 shadow-lg">
+                <div className="flex flex-col max-w-sm mx-4 my-6 shadow-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 hover:rounded-xl rounded-xl">
                     <div className="px-4 py-12 rounded-t-lg sm:px-8 md:px-12 bg-gray-900">
                         <p className="relative px-6 py-1 text-lg italic text-center text-gray-100">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" className="w-8 h-8 text-violet-400">

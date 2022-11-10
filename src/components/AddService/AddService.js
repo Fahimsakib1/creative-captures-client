@@ -82,7 +82,7 @@ const AddService = () => {
 
     return (
         <div className=''>
-            <div className='bg-gray-800 w-3/4 mx-auto rounded-lg '>
+            <div className='bg-gray-800 mx-auto rounded-lg lg:w-3/4 md:w-3/4 sm:w-full w-full'>
                 <form onSubmit={handleAddService} className='pb-3'>
                     <div className=' w-3/4 mx-auto'>
                         <h2 className='text-center font-semibold text-blue-700 text-2xl mb-6 pt-6'><span className='text-orange-600'>{user?.displayName ? user.displayName : user.email}</span> Add Your Service</h2>

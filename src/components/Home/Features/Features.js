@@ -2,19 +2,21 @@ import React from 'react';
 import logo from '../../../images/Logo.PNG';
 import logo1 from '../../../images/Collage.webp';
 import useTitle from '../../../Hooks/useTitle';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
 
 const Features = () => {
-    
+
     return (
         <div className='px-16'>
-            
+
             <div className='text-center mt-24'>
                 <h2 className='md:text-5xl lg:text-5xl font-semibold text-blue-600 sm:text-4xl text-3xl '>Quality That Matters</h2>
                 <div className='sm:w-full md:w-3/4 lg:w-1/2 mx-auto mt-3'>
                     <p className='text-lg'>Photography allows you to capture memories, stories, and different perspectives. Photography can serve many purposes and have many facets. Photography can tell a story, it can capture a moment in time, it can document, and it can be art.</p>
                 </div>
             </div>
-            
+
             <div className='mt-8'>
                 <section className="bg-gray-800 text-gray-100 rounded-lg">
                     <div className="container max-w-xl p-6 pt-6 pb-8 mx-auto space-y-24 lg:px-8 lg:max-w-7xl">
@@ -69,9 +71,16 @@ const Features = () => {
 
                                 </div>
                             </div>
-                            <div aria-hidden="true" className="mt-10 lg:mt-0 lg:ml-8">
-                                <img className='rounded-xl' src={logo1} alt="logo"/>
+
+                            <div aria-hidden="true" className="mt-10 lg:mt-0 lg:ml-8      transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300 hover:rounded-xl rounded-xl">
+                                {/* <img className='rounded-xl' src={logo1} alt="logo" /> */}
+                                <PhotoProvider>
+                                    <PhotoView src={logo1} className='w-full'>
+                                        <img className='rounded-xl' src={logo1} alt="logo" />
+                                    </PhotoView>
+                                </PhotoProvider>
                             </div>
+
                         </div>
                     </div>
                 </section>

@@ -12,7 +12,7 @@ const ServicesCard = ({ service }) => {
 
     return (
         <div>
-            <div className="card card-compact w-fit sm:w-96 md:w-96 lg:w-96 bg-base-100 shadow-2xl mb-4 mx-auto">
+            <div className="card card-compact w-fit sm:w-96 md:w-96 lg:w-96 bg-base-100 shadow-2xl mb-4 mx-auto    transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 hover:bg-blue-200 duration-300 hover:rounded-xl rounded-xl ">
 
                 <PhotoProvider>
                     <PhotoView src={img} className='w-full'>
@@ -39,7 +39,9 @@ const ServicesCard = ({ service }) => {
                         </div>
 
                         <div className='flex'>
-                            <p className='text-black font-bold'>Rating: {ratting} </p>
+                            <div className=''>
+                                <p className='text-black font-bold'>Rating: {ratting} </p>
+                            </div>
                             <div className=''>
                                 <ImStarFull className='text-lg ml-1 text-orange-500'></ImStarFull>
                             </div>

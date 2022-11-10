@@ -16,7 +16,7 @@ const ReviewsOnCurrentPage = ({ rev }) => {
 
     return (
         <div>
-            <div className="container flex flex-col w-full max-w-lg p-6 pt-0 mx-auto divide-y rounded-lg divide-gray-700 bg-gray-900 text-gray-100 mb-4">
+            <div className="container flex flex-col max-w-lg p-6 pt-0 mx-auto divide-y rounded-lg divide-gray-700 bg-gray-900 text-gray-100 mb-4 lg:w-full md:w-full sm:w-3/4 w-3/4">
                 <div className="flex justify-between p-4">
                     <div className="flex space-x-4">
                         
@@ -24,9 +24,9 @@ const ReviewsOnCurrentPage = ({ rev }) => {
                             {
                                 user?.uid ? 
                                 
-                                <img src={photoURL} alt="" className="object-cover w-12 h-12 rounded-full bg-gray-500" />
+                                <img src={photoURL} alt="" className="object-cover w-14 h-14 rounded-full bg-gray-500 " />
                                     :
-                                    <FaUserCircle className='w-12 h-12 rounded-full'></FaUserCircle>
+                                    <FaUserCircle className='w-14 h-14 rounded-full'></FaUserCircle>
                             }
                         </div>
 
@@ -49,7 +49,7 @@ const ReviewsOnCurrentPage = ({ rev }) => {
                 <div className="px-4 pt-2 space-y-2 text-sm text-gray-400">
                     <p>{review}</p>
                 </div>
-                
+
             </div>
         </div>
     );
