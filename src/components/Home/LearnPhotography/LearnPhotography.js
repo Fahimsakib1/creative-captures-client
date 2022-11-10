@@ -39,9 +39,9 @@ const LearnPhotography = () => {
                             </svg>
                             <span className="relative ml-6">Want</span>
                         </span>{' '}
-                        To Be Mater In Photography? Follow These Steps
+                        To Be Master In Photography? Follow These Steps
                     </h2>
-                    <p className="text-base text-gray-700 md:text-lg ">
+                    <p className="text-base text-gray-700 md:text-lg p">
                         You are not alone my friend. When there are not plenty of amazing resources available to the beginner, I am there for them. Lets do it together
                     </p>
                 </div>
