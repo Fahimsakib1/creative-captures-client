@@ -1,5 +1,9 @@
 import React from 'react';
 import useTitle from '../../../Hooks/useTitle';
+import { motion } from 'framer-motion';
+
+
+
 
 const LearnPhotography = () => {
     
@@ -47,7 +51,11 @@ const LearnPhotography = () => {
                 </div>
 
 
-                <div className="grid max-w-screen-lg mx-auto space-y-6 lg:grid-cols-2 lg:space-y-0 lg:divide-x ">
+                <motion.div 
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 1.5 }}
+                className="grid max-w-screen-lg mx-auto space-y-6 lg:grid-cols-2 lg:space-y-0 lg:divide-x ">
                     <div className="space-y-6 sm:px-16">
 
                         <div className="flex flex-col max-w-md sm:flex-row bg-gray-200 py-4 px-3 rounded-lg  transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 hover:rounded-xl hover:bg-gray-800 hover:text-white">
@@ -222,7 +230,7 @@ const LearnPhotography = () => {
                         </div>
 
                     </div>
-                </div>
+                </motion.div>
             </div>
         </div>
     );

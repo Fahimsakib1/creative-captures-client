@@ -10,6 +10,7 @@ import SocialLogin from '../SocialLogin/SocialLogin';
 import Swal from 'sweetalert2';
 import useTitle from '../../Hooks/useTitle';
 import { toast } from 'react-toastify';
+import { motion } from 'framer-motion';
 
 
 
@@ -107,11 +108,20 @@ const Login = () => {
             
             
             <div className="hero-content flex-col lg:flex-row-reverse grid md:grid-cols-2 gap-24">
-                <div className="text-center lg:text-left">
+                <motion.div 
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1.2 }}
+                transition={{ duration: 0.5 }}
+                className="text-center lg:text-left">
                     <img className='w-full' src={login5} alt="" />
-                </div>
+                </motion.div>
+                
 
-                <div className="card flex-shrink-0 w-full max-w-md shadow-2xl bg-gray-900 text-white sm:w-3/4 sm:mx-auto lg:w-full md:w-full md:mx-auto">
+                <motion.div 
+                initial={{ opacity: 0, scale: 2.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5 }}
+                className="card flex-shrink-0 w-full max-w-md shadow-2xl bg-gray-900 text-white sm:w-3/4 sm:mx-auto lg:w-full md:w-full md:mx-auto">
                     <h1 className="text-4xl font-bold text-center mt-6">Login</h1>
 
                     <form
@@ -155,7 +165,7 @@ const Login = () => {
                         <p>New to this Website?  <Link to='/signup' className='text-orange-400 font-semibold'>Sign Up</Link></p>
                     </div>
 
-                </div>
+                </motion.div>
 
             </div>
         </div>

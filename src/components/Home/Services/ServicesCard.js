@@ -4,6 +4,7 @@ import { FaClock } from "react-icons/fa";
 import { ImStarFull } from "react-icons/im";
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
+import { motion } from 'framer-motion';
 
 const ServicesCard = ({ service }) => {
 
@@ -12,7 +13,12 @@ const ServicesCard = ({ service }) => {
 
     return (
         <div>
-            <div className="card card-compact w-[300px] sm:w-[450px] md:w-80 lg:w-96 bg-base-100 shadow-2xl mb-4 mx-auto    transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 hover:bg-blue-200 duration-300 hover:rounded-xl rounded-xl ">
+            
+            <motion.div 
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="card card-compact w-[300px] sm:w-[450px] md:w-80 lg:w-96 bg-base-100 shadow-2xl mb-4 mx-auto    transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 hover:bg-blue-200 duration-300 hover:rounded-xl rounded-xl ">
 
                 <PhotoProvider>
                     <PhotoView src={img} className='w-full'>
@@ -53,7 +59,7 @@ const ServicesCard = ({ service }) => {
                         <Link to={`/services/${_id}`}><button className="btn btn-primary">View Details</button></Link>
                     </div>
                 </div>
-            </div>
+            </motion.div>
         </div>
     );
 };

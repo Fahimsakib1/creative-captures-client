@@ -7,6 +7,9 @@ import Swal from 'sweetalert2';
 import useTitle from '../../Hooks/useTitle';
 import { tokenFunction } from '../../JWTTokenFunction/JWTTokenFunction';
 import { toast } from 'react-toastify';
+import { motion } from 'framer-motion';
+
+
 
 const Signup = () => {
 
@@ -104,11 +107,22 @@ const Signup = () => {
 
 
             <div className="hero-content flex-col lg:flex-row-reverse grid md:grid-cols-2 gap-24">
-                <div className="text-center lg:text-left">
-                    <img className='w-full' src={signup} alt="" />
-                </div>
 
-                <div className="card flex-shrink-0 w-full max-w-md shadow-2xl bg-gray-900 text-white sm:w-3/4 sm:mx-auto lg:w-full md:w-full md:mx-auto">
+                <motion.div
+                    initial={{ opacity: 0, scale: 2.5 }}
+                    animate={{ opacity: 1, scale: 1.2 }}
+                    transition={{ duration: 0.5 }}
+
+                    className="text-center lg:text-left">
+                    <img className='w-full' src={signup} alt="" />
+                </motion.div>
+
+                <motion.div 
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1.1 }}
+                transition={{ duration: 0.5 }}
+                
+                className="card flex-shrink-0 w-full max-w-md shadow-2xl bg-gray-900 text-white sm:w-3/4 sm:mx-auto lg:w-full md:w-full md:mx-auto">
                     <h1 className="text-4xl font-bold text-center mt-6">Sign Up</h1>
 
                     <form
@@ -167,7 +181,7 @@ const Signup = () => {
                         <p>Already have an account?  <Link to='/login' className='text-blue-600 font-semibold'>Login</Link></p>
                     </div>
 
-                </div>
+                </motion.div>
 
             </div>
         </div>
