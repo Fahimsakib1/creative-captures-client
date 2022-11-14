@@ -1,0 +1,137 @@
+[
+    {
+        "service_id": "1",
+        "service_name": "Birthday Photography",
+        "price": 6000,
+        "img": "https://i.ibb.co/6wC1G8Y/Birthday1.jpg",
+        "ratting": "4.5",
+        "duration": "3 Hours",
+        "total_booked": "300",
+        "review1": "Loved The photography. He clicked some amazing photos. The photo delivery was on time. I am really pleased with the service",
+        "review1_date": "2020",
+        "review1_email": "atik@gmail.com",
+        "review2": "He is such an amazing person and also very professional. He kep his word and provide me the exact service that I wanted.",
+        "review2_date": "2021",
+        "review2_email": "sifat@gmail.com",
+        "description": "When you are young, one of the most special days of the year is your birthday. And when it comes to your birthday photo shoot, creative captures there for you. Your birthday photos that you can hang in your home,  share on your social media, and even hand down to your kids. You need to have beautiful images that will create memories that will last a lifetime."
+    },
+
+    {
+        "service_id": "2",
+        "service_name": "Family Photography",
+        "price": 3500,
+        "img": "https://i.ibb.co/54jz2q9/family.webp",
+        "ratting": "4.5",
+        "total_booked": "200",
+        "duration": "2 Hours",
+        "review1": "I have a large family with many family members. I was in some tension that could he ma age to take beautiful family pictures? But he was on point and clicked very good pictures",
+        "review1_date": "2022",
+        "review1_email": "shopnil@gmail.com",
+        "review2": "He really understands the photography. He captured beautiful images for my family. I will definitely recommend creative captures service",
+        "review2_date": "2020",
+        "review2_email": "jahid@gmail.com",
+        "description": "This year Creative Captures Photography is providing two awesome options to get your snuggle on and get some awesome family photos! It starts with colorful fall foliage sessions at a park. Then, I'm offering some new festive (and weather-free) indoor holiday mini sessions at a gorgeous, bright studio in the city"
+    },
+
+    {
+        "service_id": "3",
+        "service_name": "Fashion Photography",
+        "price": 7500,
+        "img": "https://i.ibb.co/BwdggB1/Fashion.webp",
+        "ratting": "4.5",
+        "total_booked": "500",
+        "duration": "4 Hours",
+        "review1": "I am a professional model. I always take my modeling photos from Creative Captures and It is very good. I loved the service",
+        "review1_date": "2021",
+        "review1_email": "sheha@gmail.com",
+        "review2": "I booked the service for indoor modeling photography and bingo! I am surprised by the amazing pictures. I will surely take more services from Creative Captures next time",
+        "review2_date": "2020",
+        "review2_email": "tania@gmail.com",
+        "description": "Fashion Photography is something that is continuously evolving to a new level daily. The art of street fashion photography is developing as well. Most of the fashion pictures were initially shot indoors in photo studios. It evolved from indoor fashion photo shoots to outdoor fashion photo shoots throughout time. Street fashion photography has recently been a popular style among world-class fashion photographers. If you are interested then please contact"
+    },
+
+    {
+        "service_id": "4",
+        "service_name": "Food Photography",
+        "price": 2500,
+        "img": "https://i.ibb.co/SNn6gJM/Food.jpg",
+        "ratting": "4.5",
+        "total_booked": "500",
+        "duration": "2 Hours",
+        "review1": "I have a restaurant and I have taken the food photography service. I am totally pleased with the service he gave.",
+        "review1_date": "2022",
+        "review1_email": "araf@gmail.com",
+        "review2": "I am a food lover and explorer. I have some friends who are the owners of some food shops and I have recommended Creative Captures and my friends are very happy with the service",
+        "review2_date": "2021",
+        "review2_email": "saif@gmail.com",
+        "description": "While scrolling through social media, you probably noticed that everyone posts multiple pictures of the food they prepared at home or ordered in the restaurant. You most likely did so at least once too. And while for some it might seem like wasting memory on your phone, for some food photography is essential. After all, it's the pictures of the goods that convince people to eat or buy there. Food photography can either make or break these businesses, so, naturally, they want it to be perfect. As a photographer, I am making sure that the photos will meet your expectations."
+    },
+
+    {
+        "service_id": "5",
+        "service_name": "Newborn Photography",
+        "price": 4000,
+        "img": "https://i.ibb.co/Zd1TR84/Newborn.jpg",
+        "ratting": "4.5",
+        "total_booked": "420",
+        "duration": "2 Hours",
+        "review1": " Last month my baby was born and I took the newborn photography from Creative Captures and it was fantastic. I got some amazing photos of my baby",
+        "review1_date": "2022",
+        "review1_email": "rahul@gmail.com",
+        "review2": "I have twin babies and I wanted to have a baby photography session. I have considered Creative Captures and tried the service. I must say that it was pitch perfect",
+        "review2_date": "2021",
+        "review2_email": "ankit@gmail.com",
+        "description": "Newborn baby photography is a very specialized topic of portraiture. If the baby is your own or belongs to a close friend or family member, you may be looking to grab a few snaps and need a few tips. Or, you may be a professional photographer looking to make a foray into the newborn photography space. Many photographers find that one of the most difficult facets of this type of photography is dealing with new parents. And while there are not many equipment requirements, you will definitely want to be a master of using natural light and off-camera lighting setups. Whatever the case may be, Creative Captures newborn photography service is there for you."
+    },
+
+    {
+        "service_id": "6",
+        "service_name": "Pet Photography",
+        "price": 2500,
+        "img": "https://i.ibb.co/Vx1kwn3/Pet.webp",
+        "ratting": "4.5",
+        "total_booked": "420",
+        "duration": "3 Hours",
+        "review1": "I have a pet dog and he is very fond of camera. I have taken the pert photography service and I am satisfied with the service.",
+        "review1_date": "2022",
+        "review1_email": "lamia@gmail.com",
+        "review2": "I have a pet cat and I have booked the pet photography service. I cam out with some of the beautiful pictures of my pet. I am recommending Creative Captures",
+        "review2_date": "2020",
+        "review2_email": "kurshy@gmail.com",
+        "description": "Photographing your pets is about capturing their personality, their funny and sweet moments and their habits. It requires a certain set of skills and patience to tackle. Pet photography is a popular photographic niche these days. It can be photos of your furry friend for your Instagram feed. Or perhaps professional dog show pictures. Knowing how to photograph pets is also a great way to practice for better photography in general. Sometimes You are not able to take beautiful images of your pet s ypu probably do not know how to deal wih this. Consider Creative Capture for Pet Photograph"
+    },
+
+    {
+        "service_id": "7",
+        "service_name": "Product Photography",
+        "price": 3500,
+        "img": "https://i.ibb.co/mBN1Xtd/Product.jpg",
+        "ratting": "4.5",
+        "total_booked": "670",
+        "duration": "3 Hours",
+        "review1": " I have a clothing shop and I have hired him to take some cloth pictures and He just nailed it. I am really happy with the service",
+        "review1_date": "2020",
+        "review1_email": "asif@gmail.com",
+        "review2": "I sell my products online and for the better product publicity Creative Captures help to clicked some best photos of my products. Now my business is going very well",
+        "review2_date": "2021",
+        "review2_email": "mehedi@gmail.com",
+        "description": "Product photography, or e-commerce photography as it is sometimes known, is basically what it sounds like: photos taken and used on websites and social media platforms to help drive sales of your product or service. Given the rise of shopping online, the choice of products and brands available to consumers in any given category can be vast meaning the photos that illustrate what you are selling and why it is worth buying are a fundamental aspect for any business selling online."
+    },
+
+    {
+        "service_id": "8",
+        "service_name": "Wild Life Photography",
+        "price": 10000,
+        "img": "https://i.ibb.co/TYfNNcY/Jaguar.jpg",
+        "ratting": "4.7",
+        "total_booked": "670",
+        "duration": "5 Hours",
+        "review1": "I love the pictures. Best wishes for you man",
+        "review1_date": "2020",
+        "review1_email": "asif@gmail.com",
+        "review2": "Amazing photography. Keep it up",
+        "review2_date": "2021",
+        "review2_email": "mehedi@gmail.com",
+        "description": "Wildlife photography is a genre of photography concerned with documenting various forms of wildlife in their natural habitat. As well as requiring photography skills, wildlife photographers may need field craft skills. For example, some animals and birds are difficult to approach, and thus a knowledge of the animal's and birds' behavior is needed in order to be able to predict their actions."
+    }
+]

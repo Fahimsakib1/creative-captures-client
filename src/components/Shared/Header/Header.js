@@ -43,6 +43,7 @@ const Header = () => {
 
             <li className='font-semibold mr-2'> <Link to='/'>Home</Link></li>
             <li className='font-semibold mr-2'> <Link to='/blogs'>Blogs</Link></li>
+            <li className='font-semibold mr-2'> <Link to='/services'>All Services</Link></li>
 
 
             {

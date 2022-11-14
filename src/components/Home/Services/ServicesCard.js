@@ -12,11 +12,11 @@ const ServicesCard = ({ service }) => {
 
     return (
         <div>
-            <div className="card card-compact w-fit sm:w-96 md:w-96 lg:w-96 bg-base-100 shadow-2xl mb-4 mx-auto    transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 hover:bg-blue-200 duration-300 hover:rounded-xl rounded-xl ">
+            <div className="card card-compact w-[300px] sm:w-[450px] md:w-80 lg:w-96 bg-base-100 shadow-2xl mb-4 mx-auto    transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 hover:bg-blue-200 duration-300 hover:rounded-xl rounded-xl ">
 
                 <PhotoProvider>
                     <PhotoView src={img} className='w-full'>
-                        <img className='h-64' src={img} alt="ServiceImage" />
+                        <img className='h-64 rounded-lg' src={img} alt="ServiceImage" />
                     </PhotoView>
                 </PhotoProvider>
 
@@ -35,7 +35,7 @@ const ServicesCard = ({ service }) => {
                         </div>
 
                         <div className='text-black font-bold'>
-                            <p>Price: {price}</p>
+                            <p>Price: {price} <span className='font-bold'> Taka</span></p>
                         </div>
 
                         <div className='flex'>

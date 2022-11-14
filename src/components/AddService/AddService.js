@@ -18,7 +18,7 @@ const AddService = () => {
         const serviceId = event.target.serviceId.value;
         const serviceName = event.target.serviceName.value;
         const servicePhoto = event.target.photoURL.value;
-        const serviceCharge = event.target.serviceCharge.value + ' Taka';
+        const serviceCharge = parseInt(event.target.serviceCharge.value);
 
         const serviceDuration = event.target.serviceDuration.value + ' Hours';
         const serviceRating = event.target.serviceRating.value;
@@ -28,11 +28,11 @@ const AddService = () => {
 
         console.log(serviceId, serviceName, servicePhoto, serviceCharge, serviceDuration, serviceRating, email, serviceDescription);
 
-        if(serviceId <=7 ){
+        if(serviceId <= 8 ){
             return  Swal.fire({
                 icon: 'error',
                 title: 'Some Services are added already..',
-                text: 'Service ID cant be from 1 to 7..'
+                text: 'Service ID cant be from 1 to 8..'
             })
         }
 

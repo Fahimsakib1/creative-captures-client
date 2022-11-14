@@ -31,7 +31,8 @@ const MyReviews = () => {
     const [serviceLoader, setServiceLoader] = useState(true);
 
 
-
+    // http://localhost:5000/reviews
+    //https://creative-captures-server.vercel.app/reviews?email=${user?.email}
 
     useEffect(() => {
         fetch(`https://creative-captures-server.vercel.app/reviews?email=${user?.email}`, {

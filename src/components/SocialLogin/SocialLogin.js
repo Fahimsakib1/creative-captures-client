@@ -5,12 +5,15 @@ import Swal from 'sweetalert2';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { tokenFunction } from '../../JWTTokenFunction/JWTTokenFunction';
+import { useNavigate } from 'react-router-dom';
 
 
 
 const SocialLogin = () => {
     
     const {googleLogin, githubLogin} = useContext(AuthContext);
+
+    const navigate = useNavigate();
 
     const handleGoogleLogin = () => {
         googleLogin()
@@ -25,6 +28,7 @@ const SocialLogin = () => {
                 'Successfully Signed in By Google',
                 'success'
             )
+            navigate('/')
         })
 
         .catch(error => {
@@ -49,6 +53,7 @@ const SocialLogin = () => {
                 'Successfully Signed in By Github',
                 'success'
             )
+            navigate('/')
         })
 
     .catch(error => {
@@ -63,7 +68,7 @@ const SocialLogin = () => {
             <p className='text-center'>
                 <button onClick={handleGoogleLogin}   className='btn btn-ghost text-2xl' title='Google Login'><FaGoogle></FaGoogle></button>
 
-                {/* <button onClick={handleGithubLogin} className='btn btn-ghost text-2xl'><FaGithub></FaGithub></button> */}
+                <button onClick={handleGithubLogin} className='btn btn-ghost text-2xl'><FaGithub></FaGithub></button>
             </p>
         </div>
     );
