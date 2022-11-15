@@ -85,7 +85,7 @@ const MyReviews = () => {
     }
 
     return (
-        <div>
+        <div className=''>
             {/* <div>
                 <h1 className='text-2xl font-bold text-center mt-2 mb-8 text-blue-800'>{reviews.length} Reviews of {user?.email}</h1>
             </div> */}
@@ -119,7 +119,7 @@ const MyReviews = () => {
 
                     <div>
                         <div>
-                            <h1 className='text-2xl font-bold text-center mt-2 mb-8 text-blue-800'>{reviews.length} Reviews of {user?.email}</h1>
+                            <h1 className='text-2xl font-bold text-center mt-2 mb-8 text-blue-800 dark:mt-0'>{reviews.length} Reviews of {user?.email}</h1>
                         </div>
 
                         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-8 px-12'>

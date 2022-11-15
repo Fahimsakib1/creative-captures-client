@@ -6,7 +6,7 @@ import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
-    <div className="max-w-screen-2xl mx-auto">
+    <div className="max-w-screen-2xl mx-auto dark:bg-black dark:text-white">
       <RouterProvider router = {router}></RouterProvider>
       <ToastContainer
           position="top-center"

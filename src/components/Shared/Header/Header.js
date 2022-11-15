@@ -11,12 +11,12 @@ import Swal from 'sweetalert2';
 const Header = () => {
 
 
-    const { user, logoutUser } = useContext(AuthContext);
+    const { user, logoutUser, theme, ThemeChange, setTheme } = useContext(AuthContext);
 
     const handleLogOut = () => {
         logoutUser()
             .then(() => {
-                
+
             })
 
             .catch(error => {
@@ -27,6 +27,12 @@ const Header = () => {
                     text: 'Logout Failed!'
                 })
             })
+    }
+
+
+
+    const handleThemeSwitch = () => {
+        ThemeChange();
     }
 
 
@@ -41,17 +47,17 @@ const Header = () => {
                 <li className='font-bold lg:text-xl md:text-xl sm:text-lg text-md uppercase text-blue-700 -ml-4 mr-2'> <Link to='/'>Creative Captures</Link></li>
             </div>
 
-            <li className='font-semibold mr-2'> <Link to='/'>Home</Link></li>
-            <li className='font-semibold mr-2'> <Link to='/blogs'>Blogs</Link></li>
-            <li className='font-semibold mr-2'> <Link to='/services'>All Services</Link></li>
+            <li className='font-semibold mr-2 dark:text-white  dark:hover:text-orange-400'> <Link to='/'>Home</Link></li>
+            <li className='font-semibold mr-2 dark:text-white dark:hover:text-orange-400'> <Link to='/blogs'>Blogs</Link></li>
+            <li className='font-semibold mr-2 dark:text-white dark:hover:text-orange-400'> <Link to='/services'>All Services</Link></li>
 
 
             {
                 user?.uid ?
                     <>
-                        <li className='font-semibold mr-2'> <Link to='/myReviews'>My Reviews</Link></li>
-                        <li className='font-semibold mr-2'> <Link to='/addService'>Add Service</Link></li>
-                        <p className='text-blue-800 font-semibold my-auto'>Welcome, {user.email ? user.email : user.displayName}</p>
+                        <li className='font-semibold mr-2 dark:text-white dark:hover:text-orange-400'> <Link to='/myReviews'>My Reviews</Link></li>
+                        <li className='font-semibold mr-2 dark:text-white dark:hover:text-orange-400'> <Link to='/addService'>Add Service</Link></li>
+                        <p className='text-blue-800 font-semibold my-auto dark:text-green-600'>Welcome, {user.email ? user.email : user.displayName}</p>
                     </>
 
                     :
@@ -68,6 +74,8 @@ const Header = () => {
                 </div>
             }
 
+            <input onClick={handleThemeSwitch} type="checkbox" className="toggle toggle-md my-auto ml-4 sm:mt-2 md:mt-2 lg:mt-3 mt-4 bg-black" title={theme === "dark" ? 'Light Mode' : 'Dark Mode'} />
+
         </>
 
 
@@ -76,10 +84,10 @@ const Header = () => {
 
     return (
         <div>
-            <div className="navbar bg-gray-100 h-20 mb-12 shadow-lg">
+            <div className="navbar bg-gray-100 h-20 mb-12 shadow-lg dark:bg-gray-800">
                 <div className="navbar-start">
                     <div className="dropdown">
-                        <label tabIndex={0} className="btn btn-ghost lg:hidden">
+                        <label tabIndex={0} className="btn btn-ghost lg:hidden dark:text-white">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </label>
                         <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-4 shadow bg-base-100 rounded-box w-52">
@@ -89,7 +97,7 @@ const Header = () => {
                 </div>
 
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal p-0">
+                    <ul className="menu menu-horizontal p-0 ">
                         {menuItems}
                     </ul>
                 </div>

@@ -50,7 +50,7 @@ const MyReviewTable = ({ myReview, handleDeleteReview }) => {
 
         
 
-        <div className="max-w-lg p-4 shadow-md bg-gray-900 text-gray-100 rounded-xl">
+        <div className="max-w-lg p-4 shadow-md bg-gray-800 text-gray-100 rounded-xl">
             <div className="flex justify-between pb-4 border-bottom">
                 <div className="flex items-center mx-auto">
                     <p className="mb-0 capitalize text-gray-100 text-xl">{service_name} Service</p>

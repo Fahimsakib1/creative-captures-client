@@ -125,7 +125,7 @@ const ServiceDetails = () => {
             <div className='flex justify-evenly mt-8 lg:flex-row md:flex-col sm:flex-col flex-col'>
 
                 <div className=''>
-                    <div className="card card-compact w-80 sm:w-80 md:w-96 lg:w-96 bg-base-100 shadow-2xl mb-4 mx-auto">
+                    <div className="card card-compact w-80 sm:w-80 md:w-96 lg:w-96 bg-base-100 shadow-2xl mb-4 mx-auto dark:bg-gray-700">
                         <figure><img src={img} alt="Shoes" /></figure>
                         <div className="card-body">
                             <div className='flex justify-between'>
@@ -144,15 +144,15 @@ const ServiceDetails = () => {
 
                                 <div className='flex align-center justify-center'>
                                     <FaClock className='my-auto text-xl pr-2'></FaClock>
-                                    <p className="text-md font-bold text-black">{duration}</p>
+                                    <p className="text-md font-bold text-black dark:text-white">{duration}</p>
                                 </div>
 
                                 <div className='text-black font-bold'>
-                                    <p>Price: {price}</p>
+                                    <p className='dark:text-white'>Price: {price}</p>
                                 </div>
 
                                 <div className='flex'>
-                                    <p className='text-black font-bold'>Rating: {ratting} </p>
+                                    <p className='text-black font-bold dark:text-white'>Rating: <span className='dark:text-white'>{ratting}</span> </p>
                                     <ImStarFull className='text-lg ml-1 text-orange-500'></ImStarFull>
                                 </div>
                             </div>
@@ -194,7 +194,7 @@ const ServiceDetails = () => {
                         {
                             user?.uid ?
 
-                                <div className="card flex-shrink-0 w-full max-w-lg shadow-2xl bg-gray-900 text-white sm:w-3/4 sm:mx-auto lg:w-full md:w-full md:mx-auto">
+                                <div className="card flex-shrink-0 w-full max-w-lg shadow-2xl bg-gray-900 text-white sm:w-3/4 sm:mx-auto lg:w-full md:w-full md:mx-auto dark:bg-gray-800">
                                     <form
                                         onSubmit={handleAddReview}
                                         className="card-body">

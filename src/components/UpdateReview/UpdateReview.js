@@ -109,7 +109,7 @@ const UpdateReview = () => {
         <div>
             <div>
 
-                <div className="container flex flex-col w-full max-w-lg p-6 pt-0 mx-auto divide-y rounded-lg divide-gray-700 bg-gray-900 text-gray-100 mb-4">
+                <div className="container flex flex-col w-full max-w-lg p-6 pt-0 mx-auto divide-y rounded-lg divide-gray-700 bg-gray-900 text-gray-100 mb-4 dark:bg-gray-800">
                     <div className="flex justify-between p-4">
                         <div className="flex space-x-4">
                             <div className=''>
@@ -136,7 +136,7 @@ const UpdateReview = () => {
 
 
 
-                <div className="card flex-shrink-0 w-full max-w-lg shadow-2xl bg-gray-900 text-white sm:w-3/4 sm:mx-auto lg:w-full md:w-full md:mx-auto">
+                <div className="card flex-shrink-0 w-full max-w-lg shadow-2xl bg-gray-900 text-white sm:w-3/4 sm:mx-auto lg:w-full md:w-full md:mx-auto dark:bg-gray-800">
                     <form
                         onSubmit={handleUpdateReview}
                         className="card-body">

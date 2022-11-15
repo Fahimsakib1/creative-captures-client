@@ -58,7 +58,7 @@ const AllServices = () => {
         <div>
 
             {
-                serviceLoader && <div className="h-32 w-32 border-8 border-dashed rounded-full animate-spin border-black mx-auto mt-16"></div>
+                serviceLoader && <div className="h-32 w-32 border-4 border-dashed rounded-full animate-spin border-black mx-auto mt-16 dark:border-red-600"></div>
             }
 
             <div>
@@ -81,16 +81,16 @@ const AllServices = () => {
                     </div>
 
                     <div className='lg:w-[400px] md:w-[400px] sm:w-[250px] w-[250px]'>
-                        <select onChange={() => setIsAsc(!isAsc)} className="select select-bordered w-full max-w-xs my-8">
-                            <option className='text-lg' value="Low To High">Low To High</option>
-                            <option className='text-lg' value='High To Low'>High To Low</option>
+                        <select onChange={() => setIsAsc(!isAsc)} className="select select-bordered w-full max-w-xs my-8 dark:text-black">
+                            <option className='text-lg dark:text-black' value="Low To High">Low To High</option>
+                            <option className='text-lg dark:text-black' value='High To Low'>High To Low</option>
                         </select>
                     </div>
                 </div>
 
                 {/* Search services by name */}
                 <div className='flex justify-center items-center lg:flex-row md:flex-row sm:flex-col flex-col'>
-                    <input ref={searchRef} type="text" placeholder="Search By Service Name" className="input input-bordered input-primary w-full max-w-xs " />
+                    <input ref={searchRef} type="text" placeholder="Search By Service Name" className="input input-bordered input-primary w-full max-w-xs dark:text-black" />
 
                     <button onClick={handleSearch} className="btn btn-primary ml-2 px-6 mt-4 sm:mt-4 md:mt-0">Search</button>
                 </div>

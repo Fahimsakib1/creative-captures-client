@@ -114,7 +114,7 @@ const Signup = () => {
                     transition={{ duration: 0.5 }}
 
                     className="text-center lg:text-left">
-                    <img className='w-full' src={signup} alt="" />
+                    <img className='w-full dark:rounded-lg -mt-32' src={signup} alt="" />
                 </motion.div>
 
                 <motion.div 
@@ -122,7 +122,7 @@ const Signup = () => {
                 animate={{ opacity: 1, scale: 1.1 }}
                 transition={{ duration: 0.5 }}
                 
-                className="card flex-shrink-0 w-full max-w-md shadow-2xl bg-gray-900 text-white sm:w-3/4 sm:mx-auto lg:w-full md:w-full md:mx-auto">
+                className="card flex-shrink-0 w-full max-w-md shadow-2xl bg-gray-900 text-white sm:w-3/4 sm:mx-auto lg:w-full md:w-full md:mx-auto dark:bg-gray-800">
                     <h1 className="text-4xl font-bold text-center mt-6">Sign Up</h1>
 
                     <form
@@ -130,14 +130,14 @@ const Signup = () => {
                         className="card-body">
 
                         <div className="form-control">
-                            <label className="label">
+                            <label className="label p-1">
                                 <span className="label-text font-bold text-blue-600">Name</span>
                             </label>
                             <input name="name" type="text" placeholder="Enter Name" className="input input-bordered text-black" required />
                         </div>
 
                         <div className="form-control">
-                            <label className="label">
+                            <label className="label p-1">
                                 <span className="label-text font-bold text-blue-600">Photo URL</span>
                             </label>
                             <input name="photoURL" type="text" placeholder="Enter Photo URL" className="input input-bordered text-black" required />
@@ -145,14 +145,14 @@ const Signup = () => {
 
 
                         <div className="form-control">
-                            <label className="label">
+                            <label className="label p-1">
                                 <span className="label-text font-bold text-blue-600">Email Address</span>
                             </label>
                             <input name="email" type="text" placeholder="Enter Email" className="input input-bordered text-black" required />
                         </div>
 
                         <div className="form-control mb-4">
-                            <label className="label">
+                            <label className="label p-1">
                                 <span className="label-text font-bold text-blue-600">Password</span>
                             </label>
                             <input name="password" type="password" placeholder="Enter Password" className="input input-bordered text-black" required />
@@ -168,10 +168,10 @@ const Signup = () => {
 
                     </form>
 
-                    <div className="flex items-center space-x-1">
-                        <div className="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>
+                    <div className="flex items-center space-x-1 -mt-4">
+                        <div className="flex-1 h-px sm:w-16 bg-white"></div>
                         <p className="px-3 text-sm dark:text-gray-400">Login With Social Accounts</p>
-                        <div className="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>
+                        <div className="flex-1 h-px sm:w-16 bg-white"></div>
                     </div>
                     <div>
                         <SocialLogin></SocialLogin>
