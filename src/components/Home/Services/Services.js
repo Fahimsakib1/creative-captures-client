@@ -22,8 +22,12 @@ const Services = () => {
 
     const [services, setServices] = useState([]);
 
+
+
+    
+
     useEffect(() => {
-        fetch(`https://creative-captures-server.vercel.app/services?size=${3}`)
+        fetch(`https://creative-captures-server.vercel.app/threeServices?size=${3}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data);

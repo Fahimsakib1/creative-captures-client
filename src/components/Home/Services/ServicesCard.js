@@ -10,23 +10,25 @@ const ServicesCard = ({ service }) => {
 
     const { _id, img, description, service_name, price, duration, ratting } = service;
 
+    // card card-compact w-[300px] sm:w-[450px] md:w-80 lg:w-96 bg-base-100 shadow-2xl mb-4 mx-auto    transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 hover:bg-blue-200 duration-300 hover:rounded-xl rounded-xl 
+
 
     return (
-        <div>
+        <div className=''>
             
             <motion.div 
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            className="card card-compact w-[300px] sm:w-[450px] md:w-80 lg:w-96 bg-base-100 shadow-2xl mb-4 mx-auto    transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 hover:bg-blue-200 duration-300 hover:rounded-xl rounded-xl ">
+            className="card card-compact w-[300px] sm:w-[350px] md:w-80 lg:w-96 bg-base-100 shadow-2xl mb-4 sm:mx-0 mx-0 md:mx-auto  transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 hover:bg-blue-200 duration-300 hover:rounded-xl rounded-xl">
 
                 <PhotoProvider>
                     <PhotoView src={img} className='w-full'>
-                        <img className='h-64 rounded-lg' src={img} alt="ServiceImage" />
+                        <img className='h-64 rounded-lg sm:w-[350px] md:w-full w-[300px]' src={img} alt="ServiceImage" />
                     </PhotoView>
                 </PhotoProvider>
 
-                <div className="card-body">
+                <div className="card-body sm:w-3/4 md:w-full w-3/4">
                     <div className='flex justify-between'>
                         <h2 className="card-title text-blue-700 text-xl">{service_name}</h2>
                     </div>

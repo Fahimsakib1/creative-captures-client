@@ -16,7 +16,7 @@ const ReviewsOnCurrentPage = ({ rev }) => {
 
     return (
         <div>
-            <div className="container flex flex-col max-w-lg p-6 pt-0 mx-auto divide-y rounded-lg divide-gray-700 bg-gray-900 text-gray-100 mb-4 lg:w-full md:w-full sm:w-3/4 w-3/4">
+            <div className="container flex flex-col max-w-lg p-6 pt-0 mx-auto divide-y rounded-lg divide-gray-700 bg-gray-900 text-gray-100 mb-4 lg:w-full md:w-full sm:w-3/4 w-[350px]">
                 <div className="flex justify-between p-4">
                     <div className="flex space-x-4">
                         
