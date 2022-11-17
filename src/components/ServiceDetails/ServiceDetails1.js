@@ -183,7 +183,9 @@ const ServiceDetails1 = () => {
                     {
                         user?.uid ?
 
-                            <div className="card flex-shrink-0 max-w-2xl shadow-2xl bg-gray-900 text-white sm:w-3/4 sm:mx-auto lg:w-full md:w-full md:mx-auto dark:bg-gray-800  w-3/4 mx-auto mt-8">
+                            <div className="card flex-shrink-0 max-w-2xl shadow-2xl bg-gray-900 text-white sm:mx-auto lg:w-full md:w-full 
+                            sm:w-full
+                            md:mx-auto dark:bg-gray-800 mx-auto mt-8 w-full">
                                 <form
                                     onSubmit={handleAddReview}
                                     className="card-body">
