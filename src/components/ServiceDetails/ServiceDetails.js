@@ -43,7 +43,7 @@ const ServiceDetails = () => {
         const MonthDateYear = [month, day, year].join('-');
         const reviewDate = MonthDateYear + ' ' + currentTime
         console.log(reviewDate);
-        
+
 
         //review info object
         const reviewInfo = {
@@ -161,7 +161,6 @@ const ServiceDetails = () => {
                 </div>
 
 
-
                 <div className='mb:mt-4 lg:mt-0 sm:mt-4 mt-4'>
 
                     <div>
@@ -171,18 +170,18 @@ const ServiceDetails = () => {
                         {
                             myReviews.length > 0 ?
 
-                            <div>
-                                {
-                                    myReviews.map(rev => <ReviewsOnCurrentPage rev={rev} key={rev._id}></ReviewsOnCurrentPage>)
-                                }
+                                <div>
+                                    {
+                                        myReviews.map(rev => <ReviewsOnCurrentPage rev={rev} key={rev._id}></ReviewsOnCurrentPage>)
+                                    }
 
-                            </div>
+                                </div>
 
-                            : 
+                                :
 
-                            <div className='mx-24'> 
-                                <h1 className='text-3xl text-center mb-4'>No Reviews Found</h1>
-                            </div>
+                                <div className='mx-24'>
+                                    <h1 className='text-3xl text-center mb-4'>No Reviews Found</h1>
+                                </div>
                         }
 
                     </div>
@@ -204,7 +203,7 @@ const ServiceDetails = () => {
                                         </div>
 
                                         <div className="form-control mt-2">
-                                            <input name="rating" type="text" placeholder="Service Rating" className="input input-bordered text-gray-500 text-bold" required/>
+                                            <input name="rating" type="text" placeholder="Service Rating" className="input input-bordered text-gray-500 text-bold" required />
                                         </div>
 
                                         <div className='mt-2'>

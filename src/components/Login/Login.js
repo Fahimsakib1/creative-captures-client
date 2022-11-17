@@ -107,7 +107,7 @@ const Login = () => {
             }
             
             
-            <div className="hero-content flex-col lg:flex-row-reverse grid md:grid-cols-2 gap-24">
+            <div className="hero-content flex-col lg:flex-row-reverse grid md:grid-cols-2 gap-24 ">
                 <motion.div 
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1.2 }}
@@ -121,13 +121,13 @@ const Login = () => {
                 initial={{ opacity: 0, scale: 2.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5 }}
-                className="card flex-shrink-0 w-full max-w-md shadow-2xl bg-gray-900 text-white sm:w-3/4 sm:mx-auto lg:w-full md:w-full md:mx-auto dark:bg-gray-800">
+                className="card flex-shrink-0 w-full max-w-md shadow-2xl bg-gray-900 text-white sm:w-3/4 sm:mx-auto lg:w-full md:w-full md:mx-auto dark:bg-gray-900 dark:border-2 dark:border-blue-700">
                     <h1 className="text-4xl font-bold text-center mt-6">Login</h1>
 
                     <form
                         onSubmit={handleLogin}
-                        className="card-body">
-                        <div className="form-control">
+                        className="card-body ">
+                        <div className="form-control ">
                             <label className="label">
                                 <span className="label-text font-bold text-blue-600">Email Address</span>
                             </label>

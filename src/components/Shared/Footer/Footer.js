@@ -7,7 +7,7 @@ const Footer = () => {
     return (
         <div>
 
-            <footer className="footer p-8 bg-black text-white mt-64">
+            <footer className="footer p-8 bg-black text-white mt-64 dark:bg-gray-900">
                 
                 <div className='px-16'>
                     <span className="footer-title">Services</span>
@@ -34,7 +34,7 @@ const Footer = () => {
 
             </footer>
 
-            <footer className="footer px-16 py-3 border-t bg-black text-white border-base-300">
+            <footer className="footer px-16 py-3 border-t bg-black text-white border-base-300 dark:bg-gray-900">
 
                 <div className="items-center md:grid-flow-col lg:grid-flow-col sm:grid-flow-row">
 
@@ -60,7 +60,7 @@ const Footer = () => {
                 </div>
             </footer>
 
-            <div className="text-sm text-center text-gray-400 bg-black pb-4">© 2022 Creative Captures. All Rights Reserved By Fahim Faysal
+            <div className="text-sm text-center text-gray-400 bg-black pb-4 dark:bg-gray-900">© 2022 Creative Captures. All Rights Reserved By Fahim Faysal
             </div>
 
 

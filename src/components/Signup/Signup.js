@@ -122,7 +122,7 @@ const Signup = () => {
                 animate={{ opacity: 1, scale: 1.1 }}
                 transition={{ duration: 0.5 }}
                 
-                className="card flex-shrink-0 w-full max-w-md shadow-2xl bg-gray-900 text-white sm:w-3/4 sm:mx-auto lg:w-full md:w-full md:mx-auto dark:bg-gray-800">
+                className="card flex-shrink-0 w-full max-w-md shadow-2xl bg-gray-900 text-white sm:w-3/4 sm:mx-auto lg:w-full md:w-full md:mx-auto  dark:bg-gray-900 dark:border-2 dark:border-green-700">
                     <h1 className="text-4xl font-bold text-center mt-6">Sign Up</h1>
 
                     <form

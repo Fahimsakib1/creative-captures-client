@@ -6,6 +6,7 @@ import Layout from "../../Layout/Layout";
 import Login from "../../Login/Login";
 import MyReviews from "../../MyReviews/MyReviews";
 import ServiceDetails from "../../ServiceDetails/ServiceDetails";
+import ServiceDetails1 from "../../ServiceDetails/ServiceDetails1";
 import AllServices from "../../Shared/AllServices/AllServices";
 import Blogs from "../../Shared/Blogs/Blogs";
 import Signup from "../../Signup/Signup";
@@ -50,7 +51,8 @@ const router = createBrowserRouter ([
             {
                 path: '/services/:id',
                 loader: ({params}) => fetch(`https://creative-captures-server.vercel.app/services/${params.id}`),
-                element: <ServiceDetails></ServiceDetails>
+                // element: <ServiceDetails></ServiceDetails>
+                element: <ServiceDetails1></ServiceDetails1>
             },
 
             {
