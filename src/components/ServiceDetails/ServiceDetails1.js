@@ -160,7 +160,7 @@ const ServiceDetails1 = () => {
                     {
                         myReviews.length > 0 ?
 
-                            <div>
+                            <div className='lg:mx-0 md:mx-2 sm:mx-2 mx-2'>
                                 {
                                     myReviews.map(rev => <ReviewsOnCurrentPage rev={rev} key={rev._id}></ReviewsOnCurrentPage>)
                                 }
@@ -174,11 +174,11 @@ const ServiceDetails1 = () => {
                             </div>
                     }
 
-                </div>
+                </div> 
 
 
 
-                <div>
+                <div className='lg:mx-0 md:mx-2 sm:mx-2 mx-2'>
 
                     {
                         user?.uid ?

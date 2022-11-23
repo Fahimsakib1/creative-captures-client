@@ -53,7 +53,7 @@ const Login = () => {
                     email: user?.email
                 }
 
-                //get jwt token in client side
+            
                 
                 //get jwt token in client side
                 fetch('https://creative-captures-server.vercel.app/jwt', {

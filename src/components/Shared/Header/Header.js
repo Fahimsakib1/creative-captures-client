@@ -5,6 +5,7 @@ import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Swal from 'sweetalert2';
+import { BsSun, BsMoon } from 'react-icons/bs';
 
 
 
@@ -74,9 +75,19 @@ const Header = () => {
                 </div>
             }
 
-            <input onClick={handleThemeSwitch} type="checkbox" className="toggle toggle-md my-auto ml-4 sm:mt-2 md:mt-2 lg:mt-3 mt-4 bg-black" title={theme === "dark" ? 'Light Mode' : 'Dark Mode'} />
+            {/* <input onClick={handleThemeSwitch} type="checkbox" className="toggle toggle-md my-auto ml-4 sm:mt-2 md:mt-2 lg:mt-3 mt-4 bg-black" title={theme === "dark" ? 'Light Mode' : 'Dark Mode'} /> */}
+
+            {
+                theme === 'dark' ?
+                    <BsMoon onClick={handleThemeSwitch} className=" my-auto ml-8 mr-8 sm:mt-3 md:mt-3 lg:mt-2 mt-2 text-3xl mb-4 sm:mb-4 md:mb-4 lg:mb-0" title='Click For Light Mode' ></BsMoon>
+                    :
+                    <BsSun onClick={handleThemeSwitch} className=" my-auto ml-4 sm:mt-3 md:mt-3 lg:mt-2 mt-2 text-3xl mb-4 sm:mb-4 md:mb-4 lg:mb-0" title='Click For Dark Mode'></BsSun>
+            }
 
         </>
+
+
+
 
 
 

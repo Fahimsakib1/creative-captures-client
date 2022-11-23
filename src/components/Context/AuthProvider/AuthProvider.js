@@ -57,29 +57,32 @@ const AuthProvider = ({children}) => {
 
 
     
-    //code for toggle theme
+    //code for toggle theme starts here
     const [theme, setTheme] = useState("Light");
 
     useEffect( () => {
         if(theme === "dark"){
             document.documentElement.classList.add("dark")
-            
         }
         else{
             document.documentElement.classList.remove("dark")
             
-            
         }
+        const getStoredTheme = localStorage.getItem('creativeDefaultTheme');
+        setTheme(getStoredTheme);
+
     }, [theme])
+
 
     const ThemeChange = () => {
         setTheme(theme === "dark" ? "Light" : "dark")
+        localStorage.setItem('creativeDefaultTheme', theme === "dark" ? "Light" : "dark" )
     }
-
 
     const handleThemeSwitch = () => {
         ThemeChange()
     }
+    //code for toggle theme ends here
 
 
     const AuthInfo = {user, createUser, loginUser, loading, setLoading, logoutUser, googleLogin, githubLogin, updateUserProfile, theme, ThemeChange, handleThemeSwitch }
@@ -92,3 +95,4 @@ const AuthProvider = ({children}) => {
 };
 
 export default AuthProvider;
+
