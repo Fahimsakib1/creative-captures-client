@@ -59,12 +59,8 @@ Toast or Toastify notifications are pop-up messages that display some informatio
 - Sweet Alert is also used to show alert for the successful login and registration. for the error alerts is has been used also.
 
 
-### GitHub Link (Client Side) of This Project: 
-Github Link Client Side: https://github.com/Porgramming-Hero-web-course/b6a11-service-review-client-side-Fahimsakib1
-
-
 ### GitHub Link (Server Side) of This Project:
-Github Link Server Side:  https://github.com/Porgramming-Hero-web-course/b6a11-service-review-server-side-Fahimsakib1
+Github Link Server Side:  https://github.com/Fahimsakib1/creative-captures-server
 
 ### Firebase Live Site Link:
 Live Site Link: https://creative-captures.web.app

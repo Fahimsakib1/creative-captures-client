@@ -52,7 +52,7 @@ const ReviewsOnCurrentPage = ({ rev }) => {
                 </div>
 
             </div>
-        </div>
+        </div> 
     );
 };
 
