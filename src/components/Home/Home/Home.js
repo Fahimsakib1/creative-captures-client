@@ -1,5 +1,6 @@
 import React from 'react';
 import useTitle from '../../../Hooks/useTitle';
+import ContactUs from '../ContactUs/ContactUs';
 import Features from '../Features/Features';
 import Feedback from '../Feedback/Feedback';
 import LearnPhotography from '../LearnPhotography/LearnPhotography';
@@ -17,6 +18,7 @@ const Home = () => {
             <Features></Features>
             <Feedback></Feedback>
             <LearnPhotography></LearnPhotography>
+            <ContactUs></ContactUs>
         </div>
     );
 };
